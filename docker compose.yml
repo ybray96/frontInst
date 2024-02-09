@@ -1,0 +1,25 @@
+# docker-compose.yaml
+version: '3.8'
+
+services:
+
+  goals-frontend:
+    image: goals-frontend:1.0.0
+    container_name: goals-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - goals-net
+    ports:
+      - 3000:80
+    env_file:
+      - .env
+
+networks:
+  goals-net:
+    external:
+    name: https_network
+
+volumes:
+  dbdata:
