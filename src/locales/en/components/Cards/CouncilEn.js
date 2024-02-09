@@ -655,7 +655,7 @@ function CouncilEn() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`http://127.0.0.1:8000${scientist.image}`}
+                src={`http://91.147.92.207:8000${scientist.image}`}
                 alt={scientist.name_en}
                 className="w-full object-cover h-64 "
               />

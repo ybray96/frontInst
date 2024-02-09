@@ -71,7 +71,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://127.0.0.1:8000${item.image}`}
+                  src={`http://91.147.92.207:8000${item.image}`}
                   alt={`Слайд ${index + 1}`}
                   className="w-full h-48 rounded object-cover"
                 />
@@ -88,7 +88,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://127.0.0.1:8000${
+                  src={`http://91.147.92.207:8000${
                     sliderData[(index + 1) % sliderData.length].image
                   }`}
                   alt={`Слайд ${((index + 1) % sliderData.length) + 1}`}
@@ -171,7 +171,7 @@ const SlideModal = ({ isOpen, onClose, data, nextData }) => {
           </p>
         )}
         <img
-          src={`http://127.0.0.1:8000${data.image}`}
+          src={`http://91.147.92.207:8000${data.image}`}
           alt={`Slide Image`}
           className="w-full h-48 rounded object-cover mb-4"
         />

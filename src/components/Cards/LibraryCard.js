@@ -162,7 +162,7 @@ function LibraryCard() {
                 id={item.id}
                 title={item.title}
                 date={item.minidescription}
-                imageSrc={`http://127.0.0.1:8000${item.image}`}
+                imageSrc={`http://91.147.92.207:8000${item.image}`}
                 link={`http://91.147.92.207:8000/${item.file}`}
               />
             ))}

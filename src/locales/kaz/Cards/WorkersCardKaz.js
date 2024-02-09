@@ -83,7 +83,7 @@ function WorkersCardKaz() {
               >
                 <td className="p-4 flex items-center border border-gray-300">
                   <img
-                    src={`http://127.0.0.1:8000${item.image}`}
+                    src={`http://91.147.92.207:8000${item.image}`}
                     alt={item.name}
                     className="w-16 h-16 rounded-full"
                   />

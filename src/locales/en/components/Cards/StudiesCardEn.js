@@ -54,7 +54,7 @@ function StudiesCard() {
     <div className=" rounded-xl w-full xl:flex lg:flex-col bg-white border border-gray-200  relative hover:underline transition duration-300 ease-in-out hover:bg-[#dcd9d9]">
       <img
         className="h-44 w-full rounded-t-xl"
-        src={`http://127.0.0.1:8000${imageSrc}`}
+        src={`http://91.147.92.207:8000${imageSrc}`}
         alt=""
       />
 

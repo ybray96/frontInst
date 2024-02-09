@@ -163,7 +163,7 @@ function LibraryCardKaz() {
                 id={item.id}
                 title={item.title_kk}
                 date={item.minidescription_kk}
-                imageSrc={`http://127.0.0.1:8000${item.image}`}
+                imageSrc={`http://91.147.92.207:8000${item.image}`}
                 link={`http://91.147.92.207:8000/${item.file}`}
               />
             ))}
