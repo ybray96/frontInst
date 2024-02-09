@@ -8,7 +8,7 @@ function WorkersCardKaz() {
   const [workersPerPage] = useState(10);
 
   useEffect(() => {
-    const apiUrl = "http://91.147.92.207/:8000/api/v1/scientists-list/";
+    const apiUrl = "http://91.147.92.207:8000/api/v1/scientists-list/";
 
     if (!apiUrl.startsWith("http://")) {
       console.error("Invalid API URL protocol");
