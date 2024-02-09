@@ -10,16 +10,16 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     networks:
-      - goals-net
+      - https
     ports:
       - 3000:80
     env_file:
       - .env
 
 networks:
-  goals-net:
+  https:
     external:
-    name: https_network
+      name: https_network
 
 volumes:
   dbdata:
