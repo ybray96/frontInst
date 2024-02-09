@@ -11,7 +11,7 @@ function HomeKaz() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://127.0.0.1:8000/api/v1/main-list/"
+          "http://91.147.92.207:8000/api/v1/main-list/"
         );
 
         const dataArray = response.data.data;
@@ -20,7 +20,7 @@ function HomeKaz() {
           const firstItem = dataArray[0];
 
           if (firstItem && firstItem.image) {
-            const absoluteImageUrl = `http://127.0.0.1:8000/${firstItem.image}`;
+            const absoluteImageUrl = `http://91.147.92.207:8000/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );
