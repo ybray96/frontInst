@@ -20,7 +20,7 @@ function ResearchCardKaz() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `http://127.0.0.1:8000/api/v1/foundation-study-list/${id}/`,
+          `http://91.147.92.207:8000/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }
@@ -34,7 +34,7 @@ function ResearchCardKaz() {
 
     fetchArticle();
   }, [id]);
-  const mediaUrl = "http://127.0.0.1:8000/media/";
+  const mediaUrl = "http://91.147.92.207:8000/media/";
 
   // Assuming htmlContent is the HTML content and mediaUrl is the variable containing the replacement URL
   const sanitizedHtmlContent = article.full_text_kk

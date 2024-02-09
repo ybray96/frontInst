@@ -608,7 +608,7 @@ function Council() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "http://127.0.0.1:8000/api/v1/scientists-sovet-list/";
+      "http://91.147.92.207:8000/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {

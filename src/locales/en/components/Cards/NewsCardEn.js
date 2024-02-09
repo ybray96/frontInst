@@ -86,7 +86,7 @@ function NewsCardEn() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://127.0.0.1:8000/api/v1/news-list/",
+          "http://91.147.92.207:8000/api/v1/news-list/",
           { withCredentials: true }
         );
         setNews(data);
@@ -102,7 +102,7 @@ function NewsCardEn() {
     const fetchRecentNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://127.0.0.1:8000/api/v1/news-list/",
+          "http://91.147.92.207:8000/api/v1/news-list/",
           { withCredentials: true }
         );
         setRecentNews(data.slice(-6).reverse());

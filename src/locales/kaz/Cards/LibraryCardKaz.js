@@ -32,7 +32,7 @@ function LibraryCardKaz() {
     const fetchLibrary = async () => {
       try {
         const { data } = await axios.get(
-          "http://127.0.0.1:8000/api/v1/science-library-list/",
+          "http://91.147.92.207:8000/api/v1/science-library-list/",
           {
             withCredentials: true,
           }
@@ -164,7 +164,7 @@ function LibraryCardKaz() {
                 title={item.title_kk}
                 date={item.minidescription_kk}
                 imageSrc={`http://127.0.0.1:8000${item.image}`}
-                link={`http://127.0.0.1:8000/${item.file}`}
+                link={`http://91.147.92.207:8000/${item.file}`}
               />
             ))}
           </div>
