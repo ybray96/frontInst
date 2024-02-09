@@ -1,0 +1,24 @@
+{
+  "menu": {
+    "aboutUs": "About institute",
+    "research": "Research",
+    "scientificProjects": "Scientific Projects",
+    "fundamentalResearch": "Fundamental Research",
+    "appliedResearch": "Applied Research",
+    "scientificPublications": "Scientific publications",
+    "methodologicalRecommendations": "Methodological guidelines:",
+    "list": "List",
+    "scientificJournals": "Scientific Journals",
+    "expertOpinions": "Expert Opinions",
+    "scientificLibrary": "Scientific Library",
+    "modernHistory": "Modern History",
+    "digitalHistory": "Digital History",
+    "ourAchievements": "Our Achievements"
+  },
+
+
+  "pageAbout": {
+    "title": "The history of independent Kazakhstan is history of striving for prosperity and harmony in a multinational society."
+  }
+}
+

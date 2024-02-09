@@ -1,0 +1,20 @@
+
+{
+    "menu": {
+        "aboutUs": "Об институте",
+        "research": "Исследование",
+        "scientificProjects": "Научные проекты",
+        "fundamentalResearch": "Фундаментальные исследования",
+        "appliedResearch": "Прикладные исследования",
+        "scientificPublications": "Научные публикации ",
+        "methodologicalRecommendations": "Методические рекомендации:",
+        "list": "Перечень",
+        "scientificJournals": "Научные журналы",
+        "expertOpinions": "Экспертные мнения",
+        "scientificLibrary": "Научная библиотека",
+        "modernHistory": "Современная история",
+        "digitalHistory": "Digital History",
+        "ourAchievements": "Наши достижения"
+    }
+  }
+  

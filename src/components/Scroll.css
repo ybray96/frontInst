@@ -1,0 +1,13 @@
+/* Add this CSS to your styles */
+::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2f457d; /* Set the color of the scrollbar thumb */
+  border-radius: 1px; /* Optional: Set border radius to make it rounder */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4; /* Set the color of the scrollbar track */
+}

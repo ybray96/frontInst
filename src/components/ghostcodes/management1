@@ -1,0 +1,111 @@
+import React, { useState } from 'react';
+
+const profiles = [
+  {
+    name: "Пұсырманов Нұрбек Серікұлы",
+    photo: "https://old.history-state.kz/archive/photo1687859631.jpeg",
+    education: [
+      "Н.Пусырманов в 2010 году окончил Актюбинский государственный университет им. К. Жубанова (бакалавр истории - диплом с отличием)",
+      "в 2013 году магистратуру",
+      "в 2019 году докторантуру Евразийского национального университета им. Л. Н.Гумилева (PhD)"
+    ],
+    experience: [
+      "Трудовую деятельность начал учителем истории.",
+      "В разные годы работал экспертом Комитета науки Министерства образования и науки Республики Казахстан",
+      "главным экспертом Комитета по контролю в сфере образования и науки.",
+      "2018-2021 гг. Руководитель отдела Управления внутренней политики города Астаны.",
+      "2020-2021 гг. И. о. доцента кафедры политологии Евразийского национального университета им. Л. Н. Гумилева.",
+      "С 2021 по 2023 годы-вице-президент по науке РГП на ПХВ «Национальная академия образования имени И. Алтынсарина» Министерства образования и науки Республики Казахстан."
+    ],
+    publications: [
+      "Автор 24 научных и 6 познавательных публикаций",
+      "учебное пособие «История Казахстана» (в цифрах и схемах-таблицах)/2010/",
+      "Защитил докторскую диссертацию на тему» Национальная идея как фактор консолидации казахстанского общества\"."
+    ]
+  },
+  {
+    name: "Бүркітбай Ғелманұлы Аяған",
+    photo: "https://old.history-state.kz/upload/iblock/639/2e3f2b6c520328ffff0dcc2343643b72.jpg",
+    education: [
+      "Бүркітбай Ғелманұлы Аяған в 2010 году окончил другой университет.",
+      "В 2013 году магистратуру в другом месте.",
+      "В 2019 году докторантуру в ином университете (PhD)"
+    ],
+    experience: [
+      "Трудовую деятельность начал учителем истории в другом месте.",
+      "В разные годы работал экспертом в других местах.",
+      "С 2021 по 2023 годы-вице-президент по науке в другом месте."
+    ],
+    publications: [
+      "Автор 10 научных и 2 познавательных публикаций",
+      "учебное пособие «История другой страны».",
+      "Защитил докторскую диссертацию на другую тему."
+    ]
+  }
+];
+
+function ProfileInfo() {
+  const [activeProfile, setActiveProfile] = useState(null);
+
+  const handleProfileClick = (index) => {
+    if (activeProfile === index) {
+      // If the same profile is clicked, close it
+      setActiveProfile(null);
+    } else {
+      // If a different profile is clicked, open it
+      setActiveProfile(index);
+    }
+  };
+
+  return (
+    <div className="mt-2 flex flex-col mx-auto max-w-screen-xl   px-4">
+  {profiles.map((profile, index) => (
+    <div key={index} className="mb-6">
+      <div className="flex flex-col md:flex-row items-center">
+        <img
+          src={profile.photo}
+          alt={`Фотография ${profile.name}`}
+          className="w-40 h-40 object-cover rounded-full mb-4 md:mr-4"
+        />
+        <div>
+          <h2 className="text-3xl font-bold text-[#333] mb-4">
+            {profile.name}
+          </h2>
+          <button
+            onClick={() => handleProfileClick(index)}
+            className="text-blue-600 hover:underline focus:outline-none"
+          >
+            {activeProfile === index ? "Скрыть информацию" : "Показать информацию"}
+          </button>
+          {activeProfile === index && (
+            <>
+              <h3 className="text-xl font-semibold">Образование:</h3>
+              <ul className="text-[#333] mt-3">
+                {profile.education.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <h3 className="text-xl font-semibold">Профессиональная квалификация и опыт:</h3>
+              <ul className="text-[#333] mt-3">
+                {profile.experience.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <h3 className="text-xl font-semibold">Научные труды:</h3>
+              <ul className="text-[#333] mt-3">
+                {profile.publications.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+  );
+}
+
+export default ProfileInfo;

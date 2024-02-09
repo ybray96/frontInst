@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  /* 
+  filter: grayscale(100%); */
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+  
+}
+
+

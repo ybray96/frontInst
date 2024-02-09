@@ -1,0 +1,34 @@
+  <Carousel
+          showDots={true}
+          itemClass=" "
+          draggable={false}
+          responsive={responsive}
+         
+        >
+          {/* Пример использования компонента NewsItem */}
+          <NewsItem
+            title="Стартовал ІІІ конгресс историков Казахстана"
+            date="15 августа 2023"
+            imageSrc="https://file.rendit.io/n/XpGDubeMltiCNZDcu2Yf.png"
+          />
+          <NewsItem
+            title="Токаев дал поручение по многотомнику по истории Казахстана"
+            date="23.08.2023"
+            imageSrc="https://file.rendit.io/n/csQtPfGXSNMKOpmrOquA.png"
+          />
+          <NewsItem
+            title="Стартовал ІІІ конгресс историков Казахстана"
+            date="15 августа 2023"
+            imageSrc="https://file.rendit.io/n/XpGDubeMltiCNZDcu2Yf.png"
+          />
+          <NewsItem
+            title="Токаев дал поручение по многотомнику по истории Казахстана"
+            date="23.08.2023"
+            imageSrc="https://file.rendit.io/n/csQtPfGXSNMKOpmrOquA.png"
+          />
+          <NewsItem
+            title="Стартовал ІІІ конгресс историков Казахстана"
+            date="15 августа 2023"
+            imageSrc="https://file.rendit.io/n/XpGDubeMltiCNZDcu2Yf.png"
+          />
+        </Carousel>

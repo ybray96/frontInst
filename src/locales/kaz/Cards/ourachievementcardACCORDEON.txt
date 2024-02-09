@@ -1,0 +1,179 @@
+  <span className="mt-4 text-[#333]  text-base">
+        <span className=" font-bold text-black">
+          {" "}
+          Қазақстан тарихы институты
+        </span>{" "}
+        - ғылыми-сараптамалық және сараптамалық орталық болып табылады
+        Қазақстандағы тарихи оқиғаларды зерттеу және талдау 1. Біздің мақсатымыз
+        процесті ғылыми-талдамалық және сараптамалық қамтамасыз етуден тұрады
+        елдегі мемлекеттік және тарихи өзін-өзі тануды қалыптастыру, а
+        сонымен қатар қазіргі тарихтың жүйелік және теориялық негіздемесі
+        Қазақстан 1. Біз өз жетістіктерімізді мақтан тұтамыз:
+      </span>
+
+      {/* Первый аккордеон */}
+      <div
+        data-accordion="collapse"
+        data-active-classes="bg-white text-gray-900"
+        data-inactive-classes="text-gray-500"
+      >
+        <h2>
+          <button
+            type="button"
+            className={`flex items-center justify-between w-full py-5 font-medium text-left text-black-500  ${
+              isOpen1 ? "bg-transparent text-black" : ""
+            }`}
+            data-accordion-target="#accordion-flush-body-1"
+            aria-expanded={isOpen1}
+            aria-controls="accordion-flush-body-1"
+            onClick={toggleAccordion1}
+          >
+            <span>Ғылыми білімді дамыту</span>
+            <svg
+              data-accordion-icon
+              className={`w-3 h-3 rotate-180 shrink-0 ${
+                isOpen1 ? "transform rotate-0" : ""
+              }`}
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                stroke-linejoin="round"
+                strokeWidth="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          className={` ${isOpen1 ? "" : "hidden"}`}
+          aria-labelledby="accordion-flush-heading-1"
+        >
+          {/* ... Контент для первого блока ... */}
+          <div className="py-5 border-b border-gray-200">
+            <img src="https://file.rendit.io/n/u1Mmc3eNMJTJOAlMo6eM.png"></img>
+            <p className="mb-2">
+            Қазақ хандығының 550 жылдығы аясында бүгін Еуразияда
+              ұлттық университеті. Л. Н. Гумилевке маститтер жиналды
+              Қазақстан тарихшыларының III конгресі аясында бүкіл елдің тарихшылары.
+            </p>
+            <p className="mb-2">
+            Конгресс тақырыбы " конституциялық құрылыс мәселелері және рөлі
+              Ұлт Көшбасшысының". Биылғы іс-шарада көптеген жарқын оқиғалар болды
+              оқиғалар, оның ішінде тарихтың әйгілі "киттерінің" қойылымдары
+              Қазақстанның үздік тарихшыларын марапаттау, жаңаларын таныстыру
+              көрнекті ғалымдардың тарихи тақырыптарға арналған шығармалары, бірегей
+              ЕҰУ археологтары мен Президенттік және президенттік өкілдерінің көрмелері
+              мемлекеттік мұрағат.
+            </p>
+            <p className="mb-2">
+            Іс-шараға тек көрнекті тарихшылар ғана қатысқан жоқ
+              Еуразия ұлттық университеті және еліміздің басқа да өңірлері,
+              сондай-ақ мемлекеттік құрылымдардың өкілдері, депутаттар
+              Қазақстан Республикасы Парламентінің директоры
+              және мұражайлар, тарих ғылыми-зерттеу институттары, мұғалімдер
+              мектептер және басқалар.
+            </p>
+            <a
+              href="/docs/getting-started/introduction/"
+              className="text-blue-600 hover:text-blue-700 hover:underline"
+            >
+             Ары қарай оқу
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Второй аккордеон */}
+      <div
+        data-accordion="collapse"
+        data-active-classes="bg-white text-gray-900"
+        data-inactive-classes="text-gray-500"
+      >
+        <h2>
+          <button
+            type="button"
+            className={`flex items-center justify-between w-full py-5 font-medium text-left text-black-500  ${
+              isOpen2 ? "bg-transparent text-black" : ""
+            }`}
+            data-accordion-target="#accordion-flush-body-2"
+            aria-expanded={isOpen2}
+            aria-controls="accordion-flush-body-2"
+            onClick={toggleAccordion2}
+          >
+            <span>Ақпараттық хабарламалар</span>
+            <svg
+              data-accordion-icon
+              className={`w-3 h-3 rotate-180 shrink-0 ${
+                isOpen2 ? "transform rotate-0" : ""
+              }`}
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                stroke-linejoin="round"
+                strokeWidth="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          className={` ${isOpen2 ? "" : "hidden"}`}
+          aria-labelledby="accordion-flush-heading-2"
+        >
+          <div className="py-5 border-b border-gray-200">
+            <img src="https://file.rendit.io/n/co6SmbzHfxgH2hqdA7eA.png"></img>
+            <p className="mb-2 mt-2">
+            Президент Қасым-Жомарт Тоқаев Ұлттық құрылтай отырысында
+              "Әділетті Қазақстан-Адал азамат" көп томдықты аяқтауды тапсырды
+              Қазақстан тарихы бойынша келесі жылдың ортасына дейін
+            </p>
+
+            <div className="bg-[#0069b5] flex flex-row justify-center py-5 gap-10 w-full items-center rounded-lg">
+              <img
+                src="https://file.rendit.io/n/4u3EQrgaJZBqvRWRtyYT.svg"
+                className="self-start w-10 h-14 flex-shrink-0"
+                alt="Icon"
+              />
+              <div className="text-sm font-semibold text-white w-3/4">
+              "Қазақстан тарихы бойынша көп томдық дайындықты аяқтау қажет
+                келесі жылдың ортасына дейін. Содан кейін оны жүргізу керек
+                ғылыми ортада кеңінен талқылау. Бұл еңбек үлкен үлес қосады
+                мемлекеттілігімізді және тарихи құндылықтарымызды нығайтуға қосқан үлесі
+                ұлттың өзін - өзі тануы", - деді Тоқаев.
+              </div>
+            </div>
+
+            <p className="mb-2 mt-2">
+            Оның айтуынша, біздің көп ғасырлық тарихымыз – біздің тақырыбымыз
+              ұлттық мақтаныш, біздің мәдени кодымыздың маңызды құрамдас бөлігі
+              халық. Сондықтан мемлекеттің басты міндеттерінің бірі
+              оны жан-жақты зерттеу үшін қажетті жағдайлар жасау,
+              түсіну және танымал ету.
+            </p>
+            <p className="mb-2 mt-2">
+            Іс-шараға тек көрнекті тарихшылар ғана қатысқан жоқ
+              Еуразия ұлттық университеті және еліміздің басқа да өңірлері,
+              сондай-ақ мемлекеттік құрылымдардың өкілдері, депутаттар
+              Қазақстан Республикасы Парламентінің директоры
+              және мұражайлар, тарих ғылыми-зерттеу институттары, мұғалімдер
+              мектептер және басқалар.
+            </p>
+            <a
+              href="/docs/getting-started/introduction/"
+              className="text-blue-600 hover:text-blue-700 hover:underline"
+            >
+              Ары қарай оқу
+            </a>
+          </div>
+        </div>
+      </div>
