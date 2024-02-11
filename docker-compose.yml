@@ -4,8 +4,11 @@ version: '3.8'
 services:
 
   goals-frontend:
+
     image: goals-frontend:1.0.0
+    restart: always
     container_name: goals-frontend
+   
     build:
       context: .
       dockerfile: Dockerfile
