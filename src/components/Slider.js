@@ -14,7 +14,7 @@ const SliderKaz = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/mainslider-list/"
+        "http://admin.history-state.kz/api/v1/mainslider-list/"
       );
       setSliderData(response.data.data.reverse());
     } catch (error) {
@@ -72,7 +72,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://91.147.92.207:8000${item.image}`}
+                  src={`http://admin.history-state.kz${item.image}`}
                   alt={`Слайд ${index + 1}`}
                   className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
                 />
@@ -89,7 +89,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://91.147.92.207:8000${
+                  src={`http://admin.history-state.kz${
                     sliderData[(index + 1) % sliderData.length].image
                   }`}
                   alt={`Слайд ${((index + 1) % sliderData.length) + 1}`}
@@ -173,7 +173,7 @@ const SlideModal = ({ isOpen, onClose, data, nextData }) => {
           </p>
         )}
         <img
-          src={`http://91.147.92.207:8000${data.image}`}
+          src={`http://admin.history-state.kz${data.image}`}
           alt={`Slide Image`}
           className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
         />

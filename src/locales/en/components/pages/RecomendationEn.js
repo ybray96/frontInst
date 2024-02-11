@@ -43,7 +43,7 @@ function RecomendationEn() {
     const fetchRecommendations = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/recomendation-list/",
+          "http://admin.history-state.kz/api/v1/recomendation-list/",
           {
             withCredentials: true,
           }
@@ -756,7 +756,7 @@ function RecomendationEn() {
                     <td className="px-4 py-4 border-b border-gray-300">
                       <a
                         download
-                        href={`http://91.147.92.207:8000/${recommendation.file}`}
+                        href={`http://admin.history-state.kz/${recommendation.file}`}
                         className="font-medium text-white hover:underline w-1/6 bg-[#0069B5] py-1 px-2 rounded-full"
                       >
                         DOWNLOAD
