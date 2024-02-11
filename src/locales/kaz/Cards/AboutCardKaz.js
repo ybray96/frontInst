@@ -28,7 +28,7 @@ function AboutCardKaz() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/institutes-structure-list/"
+        "https://institut.hello-olzhas.kz/api/v1/institutes-structure-list/"
       );
       // console.log(response.data);
       return response.data;
@@ -51,7 +51,7 @@ function AboutCardKaz() {
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
-  const mediaUrl = "http://91.147.92.207:8000/media/";
+  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
   return (
     <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-nunito ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">
@@ -144,13 +144,12 @@ function AboutCardKaz() {
                   <div className="p-2  text-lg">
                     <p>
                       {" "}
-                      Біздің институт Қазақстан тарихын зерттеумен айналысатын
-                      жетекші ғылыми-зерттеу мекемесі болып табылады. Біз
-                      еліміздің бай және жан-жақты тарихын ашуға бағытталған
-                      көптеген іс-шаралармен айналысамыз. Біздің негізі қаланған
-                      сәттен бастап біздің басты мақсатымыз оның эволюциясы мен
-                      қазіргі қоғамға әсері туралы түсінігімізді байыту үшін
-                      Қазақстанның өткеніне сүңгу болды және болып қала береді.
+                      Қазақстанның қазіргі тарихын теориялық негіздеу,
+                      мемлекеттік құрылыс және тарихи сананы қалыптастыру
+                      процесін ғылыми-сараптамалық қамтамасыз ету функциясын
+                      жүзеге асыру мақсатында мемлекеттік мекеме ретінде
+                      құқықтық нысанада құрылған заңды тұлға мәртебесіндегі
+                      коммерциялық емес ғылыми-зерттеу ұйымы
                     </p>
                   </div>
                 </div>
@@ -302,7 +301,7 @@ function AboutCardKaz() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Жарғыға өтіңіз
+                      Ережеге өту
                     </a>
                   </div>
                 </div>
@@ -318,7 +317,7 @@ function AboutCardKaz() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Жарғыға өтіңіз
+                      Жоспарға өту
                     </a>
                   </div>
                 </div>
@@ -360,7 +359,7 @@ function AboutCardKaz() {
                     download="Стратегия_2022-2026.pdf"
                     className="mt-3 mb-2 text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300 rounded-md text-center"
                   >
-                    Жарғыға өтіңіз
+                    Жоспарға өту
                   </a>
                 </div>
               </div>

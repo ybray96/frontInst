@@ -21,14 +21,14 @@ function TheNewsCardEn() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `http://91.147.92.207:8000/api/v1/news-list/${id}/`,
+          `https://institut.hello-olzhas.kz/api/v1/news-list/${id}/`,
           {
             withCredentials: true,
           }
         );
 
         // Replace '/media/' with the dynamic media URL from the backend
-        const mediaUrl = "http://91.147.92.207:8000/media/"; // Replace with your actual media URL
+        const mediaUrl = "https://institut.hello-olzhas.kz/media/"; // Replace with your actual media URL
         data.full_text = data.full_text_en.replace(/\/media\//g, (match) => {
           return mediaUrl + match.replace("/media/", "");
         });

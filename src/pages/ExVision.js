@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link,} from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../components/images/logo.png";
 import Header from "../components/Header";
 import ExVisionImage from "../components/images/2023-07-26-twt-cover-package-loyn-taliban-horsemen.jpg.png"; // Renamed the imported image
@@ -10,7 +10,6 @@ import tiktok from "../components/SVG/tiktok.svg";
 import rec from "../components/PDF/recommendations.pdf";
 import ExVisionCard from "../components/Cards/ExVisionCard";
 import useVisualImpairmentScript from "../components/Hooks/useEye";
-
 
 function ExVision() {
   useEffect(() => {
@@ -26,7 +25,7 @@ function ExVision() {
       </a>
     );
   }
-  const handleSpecialButtonClick = useVisualImpairmentScript();
+  // const handleSpecialButtonClick = useVisualImpairmentScript();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -46,19 +45,19 @@ function ExVision() {
   const toggleState = (stateSetter) => stateSetter((prevState) => !prevState);
   return (
     <div className="w-full absolute bg-[#e4e4e4] font-nunito">
-       <div
+      <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ExVisionImage})`,
-       backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ExVisionImage})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="bg-transparent font-nunito">
           <div className="p-2">
             <header>
-            <nav className=" flex flex-col mx-auto  max-w-screen-xl">
+              <nav className=" flex flex-col mx-auto  max-w-screen-xl">
                 <div className=" relative flex  justify-between items-center sm:flex-row sm:items-center">
                   <Link to="/ru">
                     <div href="#" className="flex items-center ">
@@ -77,22 +76,19 @@ function ExVision() {
                       </div>
                     </div>
                   </Link>
-                  
+
                   <div className="flex items-center gap-4 sm:gap-4">
-                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent">
-                      
-                      
-                    </div>
+                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                      <img
-                    className="hidden xl:block lg:block"
-                    id="specialButton"
-                    style={{ cursor: "pointer" }}
-                    src="/pdf/eye.png"
-                    alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                    title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                  />
+                      {/* <img
+                        className="hidden xl:block lg:block"
+                        id="specialButton"
+                        style={{ cursor: "pointer" }}
+                        src="/pdf/eye.png"
+                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                      /> */}
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -200,66 +196,40 @@ function ExVision() {
                             </svg>
                           </button>
                           <div className="w-full ">
-                          <ul className="flex flex-col w-full divide-y divide-gray-500   ">
-                          <Link to="/ru">
-                            {" "}
-                             <li className="text-center   flex items-center px-2 py-1">
-                              <img src={logo} alt="" />
-                              <p className="text-[#333333] px-2 text-left  font-medium  ">
-                                Институт <br /> истории государства
-                              </p>
-                            </li>
-                          </Link>
-                          <div className=" flex items-center w-full h-10 px-4 py-1  bg-[#0069B5] relative">
-                            
-                          </div>
-                          <Link to="/ru/aboutus">
-                            <li className="">
-                              <button
-                                id="dropdownDividerButton"
-                                data-dropdown-toggle="dropdownDivider"
-                                className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                type="button"
-                              >
-                                Об институте
-                                {/* <img
+                            <ul className="flex flex-col w-full divide-y divide-gray-500   ">
+                              <Link to="/ru">
+                                {" "}
+                                <li className="text-center   flex items-center px-2 py-1">
+                                  <img src={logo} alt="" />
+                                  <p className="text-[#333333] px-2 text-left  font-medium  ">
+                                    Институт <br /> истории государства
+                                  </p>
+                                </li>
+                              </Link>
+                              <div className=" flex items-center w-full h-10 px-4 py-1  bg-[#0069B5] relative"></div>
+                              <Link to="/ru/aboutus">
+                                <li className="">
+                                  <button
+                                    id="dropdownDividerButton"
+                                    data-dropdown-toggle="dropdownDivider"
+                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button"
+                                  >
+                                    Об институте
+                                    {/* <img
                                 src={arrow}
                                 className="ml-2 w-2.5 h-2.5"
                               ></img> */}
-                              </button>
-                            </li>
-                          </Link>
-                          <li>
-                            <div className="lg:hidden flex flex-col">
-                              <button
-                                className=" text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                onClick={() => toggleState(setIsOpen)}
-                              >
-                                Исследование
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="27"
-                                  height="16"
-                                  viewBox="0 0 27 16"
-                                  fill="none"
-                                  className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
-                                    isOpen ? "rotate-180" : ""
-                                  }`}
-                                >
-                                  <path
-                                    d="M26.9162 0.659282C26.7843 0.397367 26.5258 0.156833 26.2832 0.0659645C26.0194 -0.0409395 25.5816 -0.0142135 25.3232 0.119416C25.2388 0.167523 22.5486 3.11273 19.3573 6.66194C16.166 10.2112 13.5286 13.1136 13.5023 13.1136C13.4759 13.1136 10.8385 10.2112 7.64719 6.66194C4.45592 3.11273 1.76575 0.167522 1.68135 0.119415C1.45453 0.00182104 1.00617 -0.0355954 0.768806 0.0445826C0.515615 0.130106 0.230774 0.38133 0.0989017 0.6379C-0.0329686 0.90516 -0.0329686 1.38623 0.0989017 1.67487C0.220224 1.93678 12.6214 15.7381 12.8798 15.8931C13.017 15.9786 13.1488 16 13.5128 16C13.9348 16 13.9823 15.9893 14.188 15.8396C14.515 15.5991 26.7896 1.93144 26.9056 1.67487C27.0269 1.40761 27.0322 0.88378 26.9162 0.659282Z"
-                                    fill="#333333"
-                                  />
-                                </svg>
-                              </button>
-
-                              {isOpen && (
-                                <div className="mt-2 space-y-2 flex flex-col  divide-y divide-black ">
+                                  </button>
+                                </li>
+                              </Link>
+                              <li>
+                                <div className="lg:hidden flex flex-col">
                                   <button
-                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                    onClick={() => toggleState(setSubMenuOpen)}
+                                    className=" text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    onClick={() => toggleState(setIsOpen)}
                                   >
-                                    Научные проекты
+                                    Исследование
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       width="27"
@@ -267,7 +237,7 @@ function ExVision() {
                                       viewBox="0 0 27 16"
                                       fill="none"
                                       className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
-                                        subMenuOpen ? "rotate-180" : ""
+                                        isOpen ? "rotate-180" : ""
                                       }`}
                                     >
                                       <path
@@ -277,126 +247,152 @@ function ExVision() {
                                     </svg>
                                   </button>
 
-                                  {subMenuOpen && (
-                                    <div className="flex flex-col space-y-2 border-t border-[#333333] pt-2">
-                                      <Link to="/ru/studies">
-                                        <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
-                                          Фундаментальные исследования
+                                  {isOpen && (
+                                    <div className="mt-2 space-y-2 flex flex-col  divide-y divide-black ">
+                                      <button
+                                        className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                        onClick={() =>
+                                          toggleState(setSubMenuOpen)
+                                        }
+                                      >
+                                        Научные проекты
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="27"
+                                          height="16"
+                                          viewBox="0 0 27 16"
+                                          fill="none"
+                                          className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
+                                            subMenuOpen ? "rotate-180" : ""
+                                          }`}
+                                        >
+                                          <path
+                                            d="M26.9162 0.659282C26.7843 0.397367 26.5258 0.156833 26.2832 0.0659645C26.0194 -0.0409395 25.5816 -0.0142135 25.3232 0.119416C25.2388 0.167523 22.5486 3.11273 19.3573 6.66194C16.166 10.2112 13.5286 13.1136 13.5023 13.1136C13.4759 13.1136 10.8385 10.2112 7.64719 6.66194C4.45592 3.11273 1.76575 0.167522 1.68135 0.119415C1.45453 0.00182104 1.00617 -0.0355954 0.768806 0.0445826C0.515615 0.130106 0.230774 0.38133 0.0989017 0.6379C-0.0329686 0.90516 -0.0329686 1.38623 0.0989017 1.67487C0.220224 1.93678 12.6214 15.7381 12.8798 15.8931C13.017 15.9786 13.1488 16 13.5128 16C13.9348 16 13.9823 15.9893 14.188 15.8396C14.515 15.5991 26.7896 1.93144 26.9056 1.67487C27.0269 1.40761 27.0322 0.88378 26.9162 0.659282Z"
+                                            fill="#333333"
+                                          />
+                                        </svg>
+                                      </button>
+
+                                      {subMenuOpen && (
+                                        <div className="flex flex-col space-y-2 border-t border-[#333333] pt-2">
+                                          <Link to="/ru/studies">
+                                            <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
+                                              Фундаментальные исследования
+                                            </button>
+                                          </Link>
+                                          <Link to="/ru/appliedstudies">
+                                            <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center ">
+                                              Прикладные исследования
+                                            </button>
+                                          </Link>
+                                        </div>
+                                      )}
+                                      <Link to="/ru/recommendations">
+                                        <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
+                                          Рекомендации
                                         </button>
                                       </Link>
-                                      <Link to="/ru/appliedstudies">
-                                        <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center ">
-                                          Прикладные исследования
+                                      <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
+                                        Научные журналы
+                                      </button>
+                                      <Link to="/ru/expertvision">
+                                        {" "}
+                                        <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center ">
+                                          Экспертные мнения
                                         </button>
                                       </Link>
                                     </div>
                                   )}
-                                   <Link to="/ru/recommendations">
-                                  <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
-                                      Рекомендации
-                                    </button>
-                                  </Link>
-                                  <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center">
-                                    Научные журналы
-                                  </button>
-                                  <Link to="/ru/expertvision">
-                                    {" "}
-                                    <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center ">
-                                      Экспертные мнения
-                                    </button>
-                                  </Link>
                                 </div>
-                              )}
-                            </div>
-                          </li>
-                          <li>
-                            <Link to="/ru/library">
-                              <button
-                                id="dropdownDividerButton"
-                                data-dropdown-toggle="dropdownDivider"
-                                className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                type="button"
-                              >
-                                Научная библиотека
-                                {/* <img
+                              </li>
+                              <li>
+                                <Link to="/ru/library">
+                                  <button
+                                    id="dropdownDividerButton"
+                                    data-dropdown-toggle="dropdownDivider"
+                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button"
+                                  >
+                                    Научная библиотека
+                                    {/* <img
                                 src={arrow}
                                 className="ml-2 h-2.5 w-2.5"
                               ></img> */}
-                              </button>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link to="/ru/history">
-                              <button
-                                id="dropdownDividerButton"
-                                data-dropdown-toggle="dropdownDivider"
-                                className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                type="button"
-                              >
-                                Современная история
-                                {/* <img
+                                  </button>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link to="/ru/history">
+                                  <button
+                                    id="dropdownDividerButton"
+                                    data-dropdown-toggle="dropdownDivider"
+                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button"
+                                  >
+                                    Современная история
+                                    {/* <img
                                 src={arrow}
                                 className="ml-2 h-2.5 w-2.5"
                               ></img> */}
-                              </button>
-                            </Link>
-                          </li>
-                          <li>
-                            <div className="relative">
-                              <button
-                                id="dropdownDividerButton"
-                                data-dropdown-toggle="dropdownDivider"
-                                className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                type="button"
-                                onClick={toggleHistory}
-                              >
-                                Digital History
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="27"
-                                  height="16"
-                                  viewBox="0 0 27 16"
-                                  fill="none"
-                                  className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
-                                    showHistory ? "rotate-180" : ""
-                                  }`}
-                                >
-                                  <path
-                                    d="M26.9162 0.659282C26.7843 0.397367 26.5258 0.156833 26.2832 0.0659645C26.0194 -0.0409395 25.5816 -0.0142135 25.3232 0.119416C25.2388 0.167523 22.5486 3.11273 19.3573 6.66194C16.166 10.2112 13.5286 13.1136 13.5023 13.1136C13.4759 13.1136 10.8385 10.2112 7.64719 6.66194C4.45592 3.11273 1.76575 0.167522 1.68135 0.119415C1.45453 0.00182104 1.00617 -0.0355954 0.768806 0.0445826C0.515615 0.130106 0.230774 0.38133 0.0989017 0.6379C-0.0329686 0.90516 -0.0329686 1.38623 0.0989017 1.67487C0.220224 1.93678 12.6214 15.7381 12.8798 15.8931C13.017 15.9786 13.1488 16 13.5128 16C13.9348 16 13.9823 15.9893 14.188 15.8396C14.515 15.5991 26.7896 1.93144 26.9056 1.67487C27.0269 1.40761 27.0322 0.88378 26.9162 0.659282Z"
-                                    fill="#333333"
-                                  />
-                                </svg>
-                              </button>
-
-                              {showHistory && (
-                                <div className="mt-2 space-y-2 flex flex-col  ">
-                                  <a href="https://e-history.kz/kz">
-                                    {" "}
-                                    <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
-                                      E-history
-                                    </button>
-                                  </a>
-
-                                  <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
-                                    Архив 2025
                                   </button>
+                                </Link>
+                              </li>
+                              <li>
+                                <div className="relative">
+                                  <button
+                                    id="dropdownDividerButton"
+                                    data-dropdown-toggle="dropdownDivider"
+                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button"
+                                    onClick={toggleHistory}
+                                  >
+                                    Digital History
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="27"
+                                      height="16"
+                                      viewBox="0 0 27 16"
+                                      fill="none"
+                                      className={`w-2.5 h-2.5 ml-2.5 transition-transform transform ${
+                                        showHistory ? "rotate-180" : ""
+                                      }`}
+                                    >
+                                      <path
+                                        d="M26.9162 0.659282C26.7843 0.397367 26.5258 0.156833 26.2832 0.0659645C26.0194 -0.0409395 25.5816 -0.0142135 25.3232 0.119416C25.2388 0.167523 22.5486 3.11273 19.3573 6.66194C16.166 10.2112 13.5286 13.1136 13.5023 13.1136C13.4759 13.1136 10.8385 10.2112 7.64719 6.66194C4.45592 3.11273 1.76575 0.167522 1.68135 0.119415C1.45453 0.00182104 1.00617 -0.0355954 0.768806 0.0445826C0.515615 0.130106 0.230774 0.38133 0.0989017 0.6379C-0.0329686 0.90516 -0.0329686 1.38623 0.0989017 1.67487C0.220224 1.93678 12.6214 15.7381 12.8798 15.8931C13.017 15.9786 13.1488 16 13.5128 16C13.9348 16 13.9823 15.9893 14.188 15.8396C14.515 15.5991 26.7896 1.93144 26.9056 1.67487C27.0269 1.40761 27.0322 0.88378 26.9162 0.659282Z"
+                                        fill="#333333"
+                                      />
+                                    </svg>
+                                  </button>
+
+                                  {showHistory && (
+                                    <div className="mt-2 space-y-2 flex flex-col  ">
+                                      <a href="https://e-history.kz/kz">
+                                        {" "}
+                                        <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
+                                          E-history
+                                        </button>
+                                      </a>
+
+                                      <button className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-1 text-center inline-flex items-center">
+                                        Архив 2025
+                                      </button>
+                                    </div>
+                                  )}
                                 </div>
-                              )}
-                            </div>
-                          </li>
-                          <Link to="/ru/ourachievements">
-                            <li>
-                              <button
-                                id="dropdownDividerButton"
-                                data-dropdown-toggle="dropdownDivider"
-                                className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
-                                type="button"
-                              >
-                                Наши достижения
-                              </button>
-                            </li>
-                          </Link>
-                        </ul>
+                              </li>
+                              <Link to="/ru/ourachievements">
+                                <li>
+                                  <button
+                                    id="dropdownDividerButton"
+                                    data-dropdown-toggle="dropdownDivider"
+                                    className="text-[#333333] whitespace-nowrap font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center"
+                                    type="button"
+                                  >
+                                    Наши достижения
+                                  </button>
+                                </li>
+                              </Link>
+                            </ul>
                           </div>
                           <div className="flex flex-col md:w-1/3 mt-5 px-2">
                             <span className="text-base font-semibold">
@@ -408,8 +404,8 @@ function ExVision() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                              <SocialLink
-                                href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
+                               <SocialLink
+                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />
@@ -484,12 +480,12 @@ function ExVision() {
                               </Link>
                             </div>
                           )}
-                       
+
                           <Link to="/ru/recommendations">
-                        <button className="block px-4 py-2 text-white hover:scale-110 w-full text-left">
-                          Рекомендации
-                        </button>
-                      </Link>
+                            <button className="block px-4 py-2 text-white hover:scale-110 w-full text-left">
+                              Рекомендации
+                            </button>
+                          </Link>
 
                           <button className="text-white whitespace-nowrap font-medium rounded-lg text-base px-2 py-2.5 text-center inline-flex  items-center hover:scale-110">
                             Научные журналы

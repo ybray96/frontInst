@@ -8,9 +8,9 @@ function WorkersCardEn() {
   const [workersPerPage] = useState(10);
 
   useEffect(() => {
-    const apiUrl = "http://91.147.92.207:8000/api/v1/scientists-list/";
+    const apiUrl = "https://institut.hello-olzhas.kz/api/v1/scientists-list/";
 
-    if (!apiUrl.startsWith("http://")) {
+    if (!apiUrl.startsWith("https://")) {
       console.error("Invalid API URL protocol");
       return;
     }
@@ -85,7 +85,7 @@ function WorkersCardEn() {
                 >
                   <td className="p-4 flex items-center border border-gray-300">
                     <img
-                      src={`http://91.147.92.207:8000${item.image}`}
+                      src={`https://institut.hello-olzhas.kz${item.image}`}
                       alt={item.name}
                       className="w-16 h-16 rounded-full"
                     />

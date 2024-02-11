@@ -31,7 +31,7 @@ function AboutCard() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/institutes-structure-list/"
+        "https://institut.hello-olzhas.kz/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -50,7 +50,7 @@ function AboutCard() {
     fetchData();
   }, []);
   const [expandedItemId, setExpandedItemId] = useState(null);
-  const mediaUrl = "http://91.147.92.207:8000/media/";
+  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
@@ -142,14 +142,13 @@ function AboutCard() {
                   <div className="p-2  text-lg">
                     <p>
                       {" "}
-                      Наш институт является ведущим научно-исследовательским
-                      учреждением, посвященным изучению истории Казахстана. Мы
-                      занимаемся обширным спектром деятельности, направленным на
-                      раскрытие богатой и многогранной истории нашей страны. С
-                      момента своего основания нашей главной целью было и
-                      остается погружение в прошлое Казахстана с целью обогатить
-                      наше понимание его эволюции и влияния на современное
-                      общество.
+                      Некоммерческая научно-исследовательская организация,
+                      обладающая статусом юридического лица, созданная в
+                      организационно-правовой форме государственного учреждения
+                      для осуществления функцией научно-аналитического
+                      обеспечения процесса строительства государственного
+                      формирования и исторического сознания, теоретического
+                      осмысления современной истории Казахстана
                     </p>
                   </div>
                 </div>
@@ -303,7 +302,7 @@ function AboutCard() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Перейти к уставу
+                      Перейти к положению
                     </a>
                   </div>
                 </div>
@@ -319,7 +318,7 @@ function AboutCard() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Перейти к уставу
+                      Перейти к плану
                     </a>
                   </div>
                 </div>
@@ -428,7 +427,6 @@ function AboutCard() {
           )}
         </div>
       </div>
-      
     </div>
   );
 }

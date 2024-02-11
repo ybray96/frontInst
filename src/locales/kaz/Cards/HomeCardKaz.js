@@ -86,6 +86,7 @@ function HomeCardKaz() {
         settings: {
           slidesToShow: 5,
           slidesToScroll: 2,
+          
         },
       },
       {
@@ -93,6 +94,7 @@ function HomeCardKaz() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
       {
@@ -100,6 +102,7 @@ function HomeCardKaz() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
     ],
@@ -111,7 +114,7 @@ function HomeCardKaz() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/news-list/",
+          "https://institut.hello-olzhas.kz/api/v1/news-list/",
           {
             withCredentials: true,
           }
@@ -182,7 +185,7 @@ function HomeCardKaz() {
             </div>{" "}
           </Link>
 
-          <Link to="/library">
+          <Link to="/studies">
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className=" p-4  text-4xl  font-semibold transition duration-200">
                 23
@@ -193,7 +196,7 @@ function HomeCardKaz() {
               </p>
             </div>
           </Link>
-          <Link to="/studies">
+          <Link to="/library">
             {" "}
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
@@ -205,7 +208,7 @@ function HomeCardKaz() {
               </p>
             </div>{" "}
           </Link>
-          <Link to="/aboutus/Management">
+          <Link to="/council">
             {" "}
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">

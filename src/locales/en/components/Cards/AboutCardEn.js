@@ -28,7 +28,7 @@ function AboutCardEn() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/institutes-structure-list/"
+        "https://institut.hello-olzhas.kz/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -51,7 +51,7 @@ function AboutCardEn() {
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
-  const mediaUrl = "http://91.147.92.207:8000/media/";
+  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
   return (
     <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-nunito ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">
@@ -143,13 +143,13 @@ function AboutCardEn() {
                   </div>
                   <div className="p-2 text-lg">
                     <p>
-                      Our institute is a leading research institution dedicated
-                      to the study of the history of Kazakhstan. We engage in a
-                      wide range of activities aimed at uncovering the rich and
-                      diverse history of our country. Since its inception, our
-                      main goal has been and remains to delve into the past of
-                      Kazakhstan to enrich our understanding of its evolution
-                      and impact on modern society.
+                      Non-commercial scientific research organization,
+                      possessing the status of a legal entity, established in
+                      the organizational and legal form of a state institution
+                      to fulfill the functions of scientific-analytical support
+                      of the process of building state formation and historical
+                      consciousness, theoretical comprehension of the modern
+                      history of Kazakhstan
                     </p>
                   </div>
                 </div>
@@ -302,7 +302,7 @@ function AboutCardEn() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Go to the charter
+                      Go to the regulations
                     </a>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ function AboutCardEn() {
                       download="?.pdf"
                       className="text-[#2C4FA4] underline font-normal text-lg hover:text-blue-300   rounded-md"
                     >
-                      Go to the charter
+                      Go to the plan
                     </a>
                   </div>
                 </div>

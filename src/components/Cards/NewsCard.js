@@ -88,7 +88,7 @@ function NewsCard() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/news-list/",
+          "https://institut.hello-olzhas.kz/api/v1/news-list/",
           { withCredentials: true }
         );
         setNews(data);
@@ -104,7 +104,7 @@ function NewsCard() {
     const fetchRecentNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/news-list/",
+          "http://91.147.92.207/api/v1/news-list/",
           { withCredentials: true }
         );
         setRecentNews(data.slice(-6).reverse());
@@ -183,7 +183,7 @@ function NewsCard() {
             />
             {searchTerm && (
               <button
-              className="text-gray-500 absolute right-12 top-4 focus:ring-4 focus:outline-none focus:ring-blue-300 "
+                className="text-gray-500 absolute right-12 top-4 focus:ring-4 focus:outline-none focus:ring-blue-300 "
                 onClick={() => setSearchTerm("")}
                 aria-label="Clear"
               >
@@ -223,7 +223,7 @@ function NewsCard() {
             </button>
           </div>
 
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-8 whitespace-pre-line">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-8 whitespace-pre-line">
             {displayedNews.map((item) => (
               <NewsItem
                 key={item.id}
@@ -237,7 +237,7 @@ function NewsCard() {
           </div>
           <div className="flex justify-center my-4 ">
             <ReactPaginate
-               className="flex gap-4 items-center"
+              className="flex gap-4 items-center"
               pageCount={pageCount}
               pageRangeDisplayed={5}
               marginPagesDisplayed={2}

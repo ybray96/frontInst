@@ -17,7 +17,7 @@ function ResearchCard() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `http://91.147.92.207:8000/api/v1/foundation-study-list/${id}/`,
+          `https://institut.hello-olzhas.kz/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }

@@ -12,7 +12,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://91.147.92.207:8000/api/v1/main-list/"
+          "https://institut.hello-olzhas.kz/api/v1/main-list/"
         );
 
         // console.log("API Response:", response.data);
@@ -25,7 +25,7 @@ function Home() {
           if (firstItem && firstItem.image) {
             //
 
-            const absoluteImageUrl = `http://91.147.92.207:8000/${firstItem.image}`;
+            const absoluteImageUrl = `https://institut.hello-olzhas.kz/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );
@@ -51,7 +51,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-full absolute  font-nunito bg-[#e4e4e4] ">
+    <div className="w-full absolute  font-nunito bg-[#e4e4e4]  ">
       {/* url(${backgroundImage}) */}
       <div
         className="xl:h-[600px] md:h-full h-[150px] relative"

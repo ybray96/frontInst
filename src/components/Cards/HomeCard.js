@@ -8,9 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider1 from "../Slider";
 import iconbg1 from "../SVG/iconbg1.svg";
 import iconbg2 from "../SVG/iconbg2.svg";
-import axios from "axios";
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 import Rectangle76 from "../images/Rectangle 76.png";
 import Rectangle77 from "../images/Rectangle 77.png";
 import Rectangle78 from "../images/Rectangle 78.png";
@@ -92,6 +91,7 @@ function HomeCard() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
       {
@@ -99,6 +99,7 @@ function HomeCard() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
     ],
@@ -109,21 +110,20 @@ function HomeCard() {
     // Функция для выполнения запроса к API
     const fetchNews = async () => {
       try {
-        const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/news-list/",
-          {
-            withCredentials: true,
-          }
-        );
-        setNews(data);
-        // console.log("API подкл", data);
+      //  Твоя API
+        const response = await axios.get('http://91.147.92.207/api/v1/news-list/');
+
+        // Обновление состояния компонента данными из ответа API
+        setNews(response.data);
       } catch (error) {
-        console.error("Error fetching news:", error);
+        // Обработка ошибок
+        console.error('Error fetching news:', error);
       }
     };
 
+
     fetchNews();
-  }, []);
+  }, []); // Пустой массив зависимостей, чтобы запрос выполнился только один раз при монтировании
   return (
     <div className="flex flex-col mx-auto  max-w-screen-xl     px-4 py-2  ">
       <img
@@ -164,7 +164,7 @@ function HomeCard() {
             </div>
           </Link>
 
-          <Link to="/ru/library">
+          <Link to="/ru/studies">
             {" "}
             <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className=" p-4  text-4xl  font-semibold transition duration-200">
@@ -175,7 +175,7 @@ function HomeCard() {
               </p>
             </div>
           </Link>
-          <Link to="/ru/studies">
+          <Link to="/ru/library">
             {" "}
             <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
@@ -187,7 +187,7 @@ function HomeCard() {
             </div>
           </Link>
 
-          <Link to="/ru/aboutus/Management">
+          <Link to="/ru/Council">
             {" "}
             <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
@@ -234,6 +234,11 @@ function HomeCard() {
             </span>
           </Link>
         </div>
+        <ul>
+        {news.map((item) => (
+          <li key={item.id}>{item.title}</li>
+        ))}
+      </ul>
         <div className="w-full mt-25 ">
           <h1 className="text-[#505050] font-semibold text-lg mt-7 mb-6">
             Ресурсы

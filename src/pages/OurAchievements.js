@@ -37,7 +37,7 @@ function OurAchievements() {
     // При монтировании компонента, прокручиваем страницу наверх
     window.scrollTo(0, 0);
   }, []);
-  const handleSpecialButtonClick = useVisualImpairmentScript();
+  // const handleSpecialButtonClick = useVisualImpairmentScript();
   function SocialLink({ href, iconSrc, alt }) {
     return (
       <a href={href}>
@@ -81,20 +81,18 @@ function OurAchievements() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent">
-                      
-                    </div>
+                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                       <img
-      className="hidden xl:block lg:block"
-      id="specialButton"
-      style={{ cursor: "pointer" }}
-      src="/pdf/eye.png"
-      alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      onClick={handleSpecialButtonClick}
-    />
+                      {/* {/* <img
+                        className="hidden xl:block lg:block"
+                        id="specialButton"
+                        style={{ cursor: "pointer" }}
+                        src="/pdf/eye.png"
+                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        onClick={handleSpecialButtonClick}
+                      /> */} 
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -212,9 +210,7 @@ function OurAchievements() {
                                   </p>
                                 </li>
                               </Link>
-                              <div className=" flex items-center w-full h-10 px-4 py-1  bg-[#0069B5] relative">
-                            
-                          </div>
+                              <div className=" flex items-center w-full h-10 px-4 py-1  bg-[#0069B5] relative"></div>
                               <Link to="/ru/aboutus">
                                 <li className="">
                                   <button
@@ -412,8 +408,8 @@ function OurAchievements() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                              <SocialLink
-                                href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
+                               <SocialLink
+                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />
@@ -601,9 +597,7 @@ function OurAchievements() {
         </div>
 
         <div className=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-xl sm:text-3xl  font-semibold   ">
-     
-          </div>
+          <div className="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
         </div>
       </div>
 

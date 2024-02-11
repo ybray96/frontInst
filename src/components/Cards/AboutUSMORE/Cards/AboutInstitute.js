@@ -30,14 +30,14 @@ function AboutUs() {
     setSelectedLanguage(language);
     setIsDropdownOpen(false);
   };
-  
+
   const toggleNav = () => setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
   const toggleState = (stateSetter) => stateSetter((prevState) => !prevState);
   useEffect(() => {
     // При монтировании компонента, прокручиваем страницу наверх
     window.scrollTo(0, 0);
   }, []);
-  const handleSpecialButtonClick = useVisualImpairmentScript();
+  // const handleSpecialButtonClick = useVisualImpairmentScript();
   function SocialLink({ href, iconSrc, alt }) {
     return (
       <a href={href}>
@@ -81,20 +81,18 @@ function AboutUs() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent">
-                      
-                    </div>
+                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                       <img
-      className="hidden xl:block lg:block"
-      id="specialButton"
-      style={{ cursor: "pointer" }}
-      src="/pdf/eye.png"
-      alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      onClick={handleSpecialButtonClick}
-    />
+                      {/* <img
+                        className="hidden xl:block lg:block"
+                        id="specialButton"
+                        style={{ cursor: "pointer" }}
+                        src="/pdf/eye.png"
+                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        onClick={handleSpecialButtonClick}
+                      /> */}
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -217,7 +215,6 @@ function AboutUs() {
                                   type="search"
                                   className="flex w-full h-full px-3   bg-white rounded text-gray-600 bg-transparent focus:outline-none"
                                 />
-                                
                               </div>
                               <Link to="/ru/aboutus">
                                 <li className="">
@@ -416,8 +413,8 @@ function AboutUs() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                              <SocialLink
-                                href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
+                               <SocialLink
+                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />
@@ -604,7 +601,7 @@ function AboutUs() {
       </div>
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
-      <p className="mt-4 text-xl">
+        <p className="mt-4 text-xl">
           Наш институт является ведущим научно-исследовательским учреждением,
           посвященным изучению истории Казахстана. Мы занимаемся обширным
           спектром деятельности, направленным на раскрытие богатой и

@@ -14,7 +14,7 @@ const SliderKaz = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/mainslider-list/"
+        "https://institut.hello-olzhas.kz/api/v1/mainslider-list/"
       );
       setSliderData(response.data.data.reverse());
     } catch (error) {
@@ -72,9 +72,9 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://91.147.92.207:8000${item.image}`}
+                  src={`https://institut.hello-olzhas.kz${item.image}`}
                   alt={`Слайд ${index + 1}`}
-                  className="w-full h-48 rounded object-cover "
+                  className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
                 />
                 {/* Дополнительная информация о слайде */}
                 <div className="absolute inset-0 flex flex-col justify-between text-white text-left p-4">
@@ -89,11 +89,11 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`http://91.147.92.207:8000${
+                  src={`https://institut.hello-olzhas.kz${
                     sliderData[(index + 1) % sliderData.length].image
                   }`}
                   alt={`Слайд ${((index + 1) % sliderData.length) + 1}`}
-                  className="w-full h-48 rounded object-cover"
+                  className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
                   onClick={() =>
                     handleCardClick((index + 1) % sliderData.length)
                   }
@@ -173,9 +173,9 @@ const SlideModal = ({ isOpen, onClose, data, nextData }) => {
           </p>
         )}
         <img
-          src={`http://91.147.92.207:8000${data.image}`}
+          src={`https://institut.hello-olzhas.kz${data.image}`}
           alt={`Slide Image`}
-          className="w-full h-48 rounded object-cover mb-4"
+          className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
         />
         <button
           onClick={onClose}

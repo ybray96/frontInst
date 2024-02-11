@@ -90,6 +90,7 @@ function HomeCardEn() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
       {
@@ -97,6 +98,7 @@ function HomeCardEn() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          arrows: false, 
         },
       },
     ],
@@ -108,7 +110,7 @@ function HomeCardEn() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/news-list/",
+          "https://institut.hello-olzhas.kz/api/v1/news-list/",
           {
             withCredentials: true,
           }
@@ -160,7 +162,7 @@ function HomeCardEn() {
             </div>{" "}
           </Link>
 
-          <Link to="/en/library">
+          <Link to="/en/studies">
             {" "}
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className=" p-4  text-4xl  font-semibold transition duration-200">
@@ -172,7 +174,7 @@ function HomeCardEn() {
               </p>
             </div>
           </Link>
-          <Link to="/en/studies">
+          <Link to="/en/library">
             {" "}
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
@@ -184,7 +186,7 @@ function HomeCardEn() {
             </div>{" "}
           </Link>
 
-          <Link to="/en/aboutus/Management">
+          <Link to="/en/council">
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
                 42

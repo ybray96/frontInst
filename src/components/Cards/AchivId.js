@@ -11,7 +11,7 @@ function AchivId() {
       try {
         if (id) {
           const { data } = await axios.get(
-            `http://91.147.92.207:8000/api/v1/achievements-list/${id}/`,
+            `https://institut.hello-olzhas.kz/api/v1/achievements-list/${id}/`,
             {
               withCredentials: true,
             }

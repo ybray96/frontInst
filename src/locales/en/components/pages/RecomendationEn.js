@@ -37,13 +37,13 @@ function RecomendationEn() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const handleSpecialButtonClick = useVisualImpairmentScript();
+  // const handleSpecialButtonClick = useVisualImpairmentScript();
   useEffect(() => {
     // Функция для выполнения запроса к API
     const fetchRecommendations = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/recomendation-list/",
+          "https://institut.hello-olzhas.kz/api/v1/recomendation-list/",
           {
             withCredentials: true,
           }
@@ -117,19 +117,17 @@ function RecomendationEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent">
-                      
-                    </div>
+                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
                     <div className="flex items-center">
-                       <img
-      className="hidden xl:block lg:block"
-      id="specialButton"
-      style={{ cursor: "pointer" }}
-      src="/pdf/eye.png"
-      alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-      onClick={handleSpecialButtonClick}
-    />
+                      {/* <img
+                        className="hidden xl:block lg:block"
+                        id="specialButton"
+                        style={{ cursor: "pointer" }}
+                        src="/pdf/eye.png"
+                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
+                        onClick={handleSpecialButtonClick}
+                      /> */}
 
                       <div className="relative inline-block text-white">
                         <button
@@ -448,8 +446,8 @@ function RecomendationEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                              <SocialLink
-                                href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
+                               <SocialLink
+                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />
@@ -758,7 +756,7 @@ function RecomendationEn() {
                     <td className="px-4 py-4 border-b border-gray-300">
                       <a
                         download
-                        href={`http://91.147.92.207:8000/${recommendation.file}`}
+                        href={`https://institut.hello-olzhas.kz/${recommendation.file}`}
                         className="font-medium text-white hover:underline w-1/6 bg-[#0069B5] py-1 px-2 rounded-full"
                       >
                         DOWNLOAD

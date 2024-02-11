@@ -68,25 +68,17 @@ function Council() {
                   </div>
                 </Link>
                 <div className="flex items-center gap-4 sm:gap-4">
-                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent">
-                    <button type="submit" className="px-2">
-                      <img
-                        src="https://file.rendit.io/n/azsEk5RWNTwxdKXVqpPn.svg"
-                        alt="Search Icon"
-                        className="w-4 h-4 text-gray-700"
-                      />
-                    </button>
-                  </div>
+                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                   <div className="flex items-center">
-                    <img
+                    {/* <img
                       className="hidden xl:block lg:block"
                       id="specialButton"
                       style={{ cursor: "pointer" }}
                       src="/pdf/eye.png"
                       alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
                       title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                    />
+                    /> */}
                     <div className="relative inline-block text-white">
                       <button
                         id="dropdownDefaultButton"
@@ -603,12 +595,12 @@ function Council() {
       </div>
     );
   };
-  const handleSpecialButtonClick = useVisualImpairmentScript();
+ // const handleSpecialButtonClick = useVisualImpairmentScript();
   const CouncilPerson = () => {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "http://91.147.92.207:8000/api/v1/scientists-sovet-list/";
+      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -631,7 +623,7 @@ function Council() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`http://91.147.92.207:8000${scientist.image}`}
+                src={`https://institut.hello-olzhas.kz${scientist.image}`}
                 alt={scientist.name}
                 className="w-full object-cover h-64"
               />
@@ -639,7 +631,9 @@ function Council() {
               <div className="bg-[#2C4FA4] p-2 text-white rounded-b-md flex relative">
                 <div>
                   <p className="text-lg line-clamp-2">{scientist.name}</p>
-                  <p className="text-[#CFCFCF] line-clamp-1">{scientist.title_job}</p>
+                  <p className="text-[#CFCFCF] line-clamp-1">
+                    {scientist.title_job}
+                  </p>
                 </div>
                 <div className="mt-5">
                   {scientist.orcid && (
@@ -650,7 +644,7 @@ function Council() {
                     >
                       <img
                         src={orcid}
-                        className="object-cover absolute right-2 top-8"
+                        className="object-cover absolute right-2 top-6"
                         alt="ORCID"
                       />
                     </a>
@@ -679,7 +673,7 @@ function Council() {
       </div>
 
       <div className="max-w-screen-xl mx-auto font-nunito">
-        <div className="mt-2 grid xl:grid-cols-5 md:grid-cols-4 grid-cols-3 gap-2 xl:gap-0">
+        <div className="mt-2 grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-2 xl:gap-0">
           <CouncilPerson />
         </div>
         <Link to="/ru/aboutus">
