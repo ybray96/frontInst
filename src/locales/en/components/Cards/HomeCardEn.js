@@ -110,7 +110,7 @@ function HomeCardEn() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://admin.history-state.kz/api/v1/news-list/",
+          "http://91.147.92.207:8000/api/v1/news-list/",
           {
             withCredentials: true,
           }
