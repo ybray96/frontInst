@@ -12,7 +12,7 @@ function AchievementsCardKaz() {
     const fetchAchievements = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207:8000/api/v1/achievements-list/",
+          "https://admin.history-state.kz/api/v1/achievements-list/",
           {
             withCredentials: true,
           }
@@ -67,7 +67,7 @@ function AchievementsCardKaz() {
           >
             <img
               className="h-48 w-96"
-              src={`http://91.147.92.207:8000${achievement.image}`}
+              src={`https://admin.history-state.kz${achievement.image}`}
               alt=""
             />
             <div className="p-4 flex flex-col">

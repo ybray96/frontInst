@@ -620,7 +620,7 @@ function CouncilKaz() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "http://91.147.92.207:8000/api/v1/scientists-sovet-list/";
+      "https://admin.history-state.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -643,7 +643,7 @@ function CouncilKaz() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`http://91.147.92.207:8000${scientist.image}`}
+                src={`https://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name_kk}
                 className="w-full object-cover h-64"
               />

@@ -28,7 +28,7 @@ function AboutCardEn() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:8000/api/v1/institutes-structure-list/"
+        "https://admin.history-state.kz/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -51,7 +51,7 @@ function AboutCardEn() {
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
-  const mediaUrl = "http://91.147.92.207:8000/media/";
+  const mediaUrl = "https://admin.history-state.kz/media/";
   return (
     <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-nunito ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">

@@ -32,7 +32,7 @@ useEffect(() => {
   const fetchLibrary = async () => {
     try {
       const { data } = await axios.get(
-        "http://91.147.92.207:8000/api/v1/science-library-list/",
+        "https://admin.history-state.kz/api/v1/science-library-list/",
         {
           withCredentials: true,
         }
@@ -162,8 +162,8 @@ useEffect(() => {
                 id={item.id}
                 title={item.title_en}
                 date={item.minidescription_en}
-                imageSrc={`http://91.147.92.207:8000${item.image}`}
-                link={`http://91.147.92.207:8000/${item.file}`}
+                imageSrc={`https://admin.history-state.kz${item.image}`}
+                link={`https://admin.history-state.kz/${item.file}`}
               />
             ))}
           </div>
