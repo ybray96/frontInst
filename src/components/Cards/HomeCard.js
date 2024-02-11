@@ -111,7 +111,7 @@ function HomeCard() {
     const fetchNews = async () => {
       try {
       //  Твоя API
-        const response = await axios.get('http://91.147.92.207/api/v1/news-list/');
+        const response = await axios.get('https://admin.history-state.kz/api/v1/news-list/');
 
         // Обновление состояния компонента данными из ответа API
         setNews(response.data);
