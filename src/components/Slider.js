@@ -72,7 +72,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`https://institut.hello-olzhas.kz${item.image}`}
+                  src={`http://91.147.92.207:8000${item.image}`}
                   alt={`Слайд ${index + 1}`}
                   className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
                 />
@@ -89,7 +89,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`https://institut.hello-olzhas.kz${
+                  src={`http://91.147.92.207:8000${
                     sliderData[(index + 1) % sliderData.length].image
                   }`}
                   alt={`Слайд ${((index + 1) % sliderData.length) + 1}`}
@@ -173,7 +173,7 @@ const SlideModal = ({ isOpen, onClose, data, nextData }) => {
           </p>
         )}
         <img
-          src={`https://institut.hello-olzhas.kz${data.image}`}
+          src={`http://91.147.92.207:8000${data.image}`}
           alt={`Slide Image`}
           className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
         />

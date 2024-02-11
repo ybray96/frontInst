@@ -84,7 +84,7 @@ function NewsItem({ title, description, imageSrc, date }) {
       <div className="p-5 flex items-center">
         <img
           className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-md"
-          src={`https://institut.hello-olzhas.kz${imageSrc}`}
+          src={`http://91.147.92.207:8000${imageSrc}`}
           alt=""
         />
         <div className="pl-2">

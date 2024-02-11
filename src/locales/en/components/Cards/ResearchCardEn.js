@@ -38,7 +38,7 @@ function ResearchCardEn() {
     // Replace '/media/' with the dynamic media URL from the backend
     return htmlContent.replace(/\/media\//g, (match) => {
       // Replace this with the actual media URL from the backend
-      return `https://institut.hello-olzhas.kz${match}`;
+      return `http://91.147.92.207:8000${match}`;
     });
   };
 

@@ -67,7 +67,7 @@ function AchievementsCard() {
           >
             <img
               className="h-48 w-96"
-              src={`https://institut.hello-olzhas.kz${achievement.image}`}
+              src={`http://91.147.92.207:8000${achievement.image}`}
               alt=""
             />
             <div className="p-4 flex flex-col">

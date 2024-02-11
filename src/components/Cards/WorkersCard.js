@@ -84,7 +84,7 @@ function WorkersCard() {
                 >
                   <td className="p-4 flex items-center border border-gray-300">
                     <img
-                      src={`https://institut.hello-olzhas.kz${item.image}`}
+                      src={`http://91.147.92.207:8000${item.image}`}
                       alt={item.name}
                       className="w-16 h-16 rounded-full"
                     />
