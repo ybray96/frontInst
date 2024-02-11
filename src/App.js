@@ -82,7 +82,7 @@ function SearchForm({ onSearch }) {
     }
     try {
       const response = await axios.get(
-        "http://91.147.92.207:3000/api/v1/search/",
+        "http://91.147.92.207:8000/api/v1/search/",
         {
           params: { query, model: selectedModel },
         }

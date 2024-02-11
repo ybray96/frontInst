@@ -31,7 +31,7 @@ function AboutCard() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://91.147.92.207:3000/api/v1/institutes-structure-list/"
+        "http://91.147.92.207:8000/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -50,7 +50,7 @@ function AboutCard() {
     fetchData();
   }, []);
   const [expandedItemId, setExpandedItemId] = useState(null);
-  const mediaUrl = "http://91.147.92.207:3000/media/";
+  const mediaUrl = "http://91.147.92.207:8000/media/";
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };

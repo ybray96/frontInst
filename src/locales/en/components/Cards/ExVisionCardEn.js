@@ -17,7 +17,7 @@ function ExVisionCardEn() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://91.147.92.207:3000/api/v1/expert-opinion-list/"
+          "http://91.147.92.207:8000/api/v1/expert-opinion-list/"
         );
         console.log("Response data:", response.data); // Add this line
         setNewsData(response.data.data.reverse());
