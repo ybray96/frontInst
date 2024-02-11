@@ -12,7 +12,7 @@ function AchievementsCardKaz() {
     const fetchAchievements = async () => {
       try {
         const { data } = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/achievements-list/",
+          "http://91.147.92.207:3000/api/v1/achievements-list/",
           {
             withCredentials: true,
           }

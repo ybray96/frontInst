@@ -14,7 +14,7 @@ function StudiesCard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/foundation-study-list/"
+          "http://91.147.92.207:3000/api/v1/foundation-study-list/"
         );
         // 
         setFoundationStudyData(response.data.data);
