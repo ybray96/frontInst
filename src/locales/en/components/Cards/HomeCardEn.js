@@ -18,11 +18,11 @@ import { useState, useEffect } from "react";
 function HomeCardEn() {
   function NewsItem({ title, date, imageSrc }) {
     return (
-      <div className=" rounded-xl w-full xl:flex lg:flex-col bg-white border border-gray-200  relative hover:underline transition duration-300 ease-in-out hover:bg-[#dcd9d9]">
+      <div className=" rounded-xl w-full xl:flex lg:flex-col bg-white border border-gray-200   hover:underline transition duration-300 ease-in-out hover:bg-[#dcd9d9]">
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
-        <div className="relative p-5">
-          <h5 className="text-base  font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20 line-clamp-3">
+        <div className="relative p-3">
+          <h5 className="text-base  font-semibold  text-gray-900 md:h-16 lg:h-20 line-clamp-3">
             {title}
           </h5>
 
