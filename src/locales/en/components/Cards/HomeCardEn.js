@@ -22,7 +22,7 @@ function HomeCardEn() {
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
         <div className="relative p-5">
-          <h5 className="lg:text-lg text-md font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20">
+          <h5 className="lg:text-lg text-md font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20 line-clamp-3">
             {title}
           </h5>
 
@@ -32,7 +32,7 @@ function HomeCardEn() {
             </p>
           </div>
           <div className="mb-2 absolute -top-14 w-[59px] h-[56px] right-0 bg-[#2C4FA4] hover:bg-black transition duration-500 ease-in-out flex items-center justify-center">
-             <p className="font-normal text-white lg:text-4xl text-2xl">→</p>
+            <p className="font-normal text-white lg:text-4xl text-2xl">→</p>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ function HomeCardEn() {
 
   const resources = [
     {
-      imgSrc: "/resources/res1.png",
+      imgSrc: Rectangle75,
       altText: "Image",
       text: "Message to the People of KZ",
     },
@@ -90,7 +90,7 @@ function HomeCardEn() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
-          arrows: false, 
+          arrows: false,
         },
       },
       {
@@ -98,7 +98,7 @@ function HomeCardEn() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          arrows: false, 
+          arrows: false,
         },
       },
     ],
@@ -110,7 +110,7 @@ function HomeCardEn() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "https://admin.history-state.kz/api/v1/news-list/",
+          "http://admin.history-state.kz/api/v1/news-list/",
           {
             withCredentials: true,
           }
@@ -209,7 +209,7 @@ function HomeCardEn() {
           News section
         </h1>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3  lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-8 px-2 whitespace-pre-line ">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4  lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-8 px-2 whitespace-pre-line ">
           {news &&
             [...news]
               .reverse()
@@ -227,8 +227,8 @@ function HomeCardEn() {
 
         <div className="flex justify-center">
           {" "}
-          <Link to="/en/newsblock" className="mt-4">
-            <span className="text-blue-600 underline hover:text-purple-700">
+          <Link to="/en/newsblock" className="lg:mt-4 mt-8">
+            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
               Show all news
             </span>
           </Link>
@@ -244,7 +244,7 @@ function HomeCardEn() {
           </h1>
           <Slider {...settings}>
             {resources.map((resource, index) => (
-              <div key={index} className="shadow-lg px-1  ">
+              <div key={index} className=" px-1  ">
                 <a
                   href={resource.href}
                   className="flex flex-col text-black hover:scale-95 transition duration-300 ease-in-out "
@@ -252,7 +252,7 @@ function HomeCardEn() {
                   <img
                     src={resource.imgSrc}
                     alt={resource.altText}
-                    className="h-full w-full object-cover"
+                    className="h-[50%] w-full object-cover rounded-t-md"
                   />
                   <div className="text-center bg-white rounded-b-md py-6  ">
                     <p className="text-black font-semibold   text-[13.2px] md:text-base lg:text-base xl:text-base underline overflow-hidden">

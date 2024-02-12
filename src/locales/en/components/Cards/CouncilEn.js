@@ -615,7 +615,7 @@ function CouncilEn() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "https://admin.history-state.kz/api/v1/scientists-sovet-list/";
+      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -638,7 +638,7 @@ function CouncilEn() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://admin.history-state.kz${scientist.image}`}
+                src={`https://institut.hello-olzhas.kz${scientist.image}`}
                 alt={scientist.name_en}
                 className="w-full object-cover h-64 "
               />

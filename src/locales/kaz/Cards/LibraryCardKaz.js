@@ -32,7 +32,7 @@ function LibraryCardKaz() {
     const fetchLibrary = async () => {
       try {
         const { data } = await axios.get(
-          "https://admin.history-state.kz/api/v1/science-library-list/",
+          "http://admin.history-state.kz/api/v1/science-library-list/",
           {
             withCredentials: true,
           }
@@ -163,8 +163,8 @@ function LibraryCardKaz() {
                 id={item.id}
                 title={item.title_kk}
                 date={item.minidescription_kk}
-                imageSrc={`https://admin.history-state.kz${item.image}`}
-                link={`https://admin.history-state.kz/${item.file}`}
+                imageSrc={`https://institut.hello-olzhas.kz${item.image}`}
+                link={`http://admin.history-state.kz/${item.file}`}
               />
             ))}
           </div>

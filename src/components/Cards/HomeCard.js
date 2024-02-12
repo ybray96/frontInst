@@ -14,7 +14,7 @@ import Rectangle76 from "../images/Rectangle 76.png";
 import Rectangle77 from "../images/Rectangle 77.png";
 import Rectangle78 from "../images/Rectangle 78.png";
 import Rectangle79 from "../images/Rectangle 79.png";
-
+import Rectangle75 from "../images/Rectangle 75.png"
 function HomeCard() {
   function NewsItem({ title, date, imageSrc }) {
     return (
@@ -22,7 +22,7 @@ function HomeCard() {
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
         <div className="relative p-5">
-          <h5 className="lg:text-lg text-md font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20">
+          <h5 className="lg:text-lg text-md font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20 line-clamp-3">
             {title}
           </h5>
 
@@ -42,7 +42,7 @@ function HomeCard() {
   const resources = [
     {
       href: "https://sun9-44.userapi.com/impg/eXfdWf2mII4PBXvpfRd702I7S1r1fB4HIdAn9A/TR5qS9pTwEU.jpg?size=227x128&quality=96&sign=f5051ec18d06053dbc23b1c13aeb7f20&type=album",
-      imgSrc: "/resources/res1.png",
+      imgSrc: Rectangle75 ,
       altText: "Image",
       text: "Послания народу Казахстана",
     },
@@ -53,7 +53,7 @@ function HomeCard() {
       text: "Уполномоченный орган",
     },
     {
-      href: "https://quryltai.kz/kk",
+      href: "http://admin.history-state.kz/://quryltai.kz/kk",
       imgSrc: Rectangle76,
       altText: "Image",
       text: "Национальный Курултай",
@@ -91,7 +91,7 @@ function HomeCard() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 2,
-          arrows: false, 
+          arrows: false,
         },
       },
       {
@@ -99,7 +99,7 @@ function HomeCard() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          arrows: false, 
+          arrows: false,
         },
       },
     ],
@@ -110,17 +110,18 @@ function HomeCard() {
     // Функция для выполнения запроса к API
     const fetchNews = async () => {
       try {
-      //  Твоя API
-        const response = await axios.get('https://admin.history-state.kz/api/v1/news-list/');
+        //  Твоя API
+        const response = await axios.get(
+          "http://admin.history-state.kz/api/v1/news-list/"
+        );
 
         // Обновление состояния компонента данными из ответа API
         setNews(response.data);
       } catch (error) {
         // Обработка ошибок
-        console.error('Error fetching news:', error);
+        console.error("Error fetching news:", error);
       }
     };
-
 
     fetchNews();
   }, []); // Пустой массив зависимостей, чтобы запрос выполнился только один раз при монтировании
@@ -211,7 +212,7 @@ function HomeCard() {
           Новостной блок
         </h1>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-3  lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-8 px-2 whitespace-pre-line ">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4  lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-8 px-2 whitespace-pre-line ">
           {news &&
             [...news]
               .reverse()
@@ -228,24 +229,20 @@ function HomeCard() {
         </div>
         <div className="flex justify-center">
           {" "}
-          <Link to="/ru/newsblock" className="mt-4">
-            <span className="text-blue-600 underline hover:text-purple-700">
+          <Link to="/ru/newsblock" className="lg:mt-4 mt-8">
+            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
               Показать все новости
             </span>
           </Link>
         </div>
-        <ul>
-        {news.map((item) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
+
         <div className="w-full mt-25 ">
           <h1 className="text-[#505050] font-semibold text-lg mt-7 mb-6">
             Ресурсы
           </h1>
           <Slider {...settings}>
             {resources.map((resource, index) => (
-              <div key={index} className=" shadow-lg px-1 ">
+              <div key={index} className="px-1">
                 <a
                   href={resource.href}
                   className="flex flex-col text-black hover:scale-95 transition duration-300 ease-in-out "
@@ -253,7 +250,7 @@ function HomeCard() {
                   <img
                     src={resource.imgSrc}
                     alt={resource.altText}
-                    className="h-full w-full object-cover rounded-md"
+                    className="h-[50%] w-full object-cover rounded-t-md"
                   />
                   <div className="text-center bg-white rounded-b-md py-6 ">
                     <p className="text-black font-bold whitespace-nowrap  text-[13.2px] md:text-base lg:text-base xl:text-base underline overflow-hidden">

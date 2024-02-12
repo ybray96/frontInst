@@ -86,7 +86,7 @@ function NewsCardKaz() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "https://admin.history-state.kz/api/v1/news-list/",
+          "http://admin.history-state.kz/api/v1/news-list/",
           { withCredentials: true }
         );
         setNews(data);
@@ -102,7 +102,7 @@ function NewsCardKaz() {
     const fetchRecentNews = async () => {
       try {
         const { data } = await axios.get(
-          "https://admin.history-state.kz/api/v1/news-list/",
+          "http://admin.history-state.kz/api/v1/news-list/",
           { withCredentials: true }
         );
         setRecentNews(data.slice(-6).reverse());

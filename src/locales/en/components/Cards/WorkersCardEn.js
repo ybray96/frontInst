@@ -6,11 +6,10 @@ function WorkersCardEn() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [workersPerPage] = useState(10);
-
   useEffect(() => {
-    const apiUrl = "https://admin.history-state.kz/api/v1/scientists-list/";
+    const apiUrl = "http://admin.history-state.kz/api/v1/scientists-list/";
 
-    if (!apiUrl.startsWith("https://")) {
+    if (!apiUrl.startsWith("http://") && !apiUrl.startsWith("https://")) {
       console.error("Invalid API URL protocol");
       return;
     }
@@ -20,7 +19,6 @@ function WorkersCardEn() {
       .then((response) => {
         if (response.data && Array.isArray(response.data.data)) {
           setData(response.data.data);
-  
         } else {
           console.error(
             "Invalid data format received from API:",
@@ -85,7 +83,7 @@ function WorkersCardEn() {
                 >
                   <td className="p-4 flex items-center border border-gray-300">
                     <img
-                      src={`https://admin.history-state.kz${item.image}`}
+                      src={`https://institut.hello-olzhas.kz${item.image}`}
                       alt={item.name}
                       className="w-16 h-16 rounded-full"
                     />

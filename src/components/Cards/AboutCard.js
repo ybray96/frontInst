@@ -31,7 +31,7 @@ function AboutCard() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "https://admin.history-state.kz/api/v1/institutes-structure-list/"
+        "http://admin.history-state.kz/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -50,7 +50,7 @@ function AboutCard() {
     fetchData();
   }, []);
   const [expandedItemId, setExpandedItemId] = useState(null);
-  const mediaUrl = "https://admin.history-state.kz/media/";
+  const mediaUrl = "http://admin.history-state.kz/media/";
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };

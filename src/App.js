@@ -82,7 +82,7 @@ function SearchForm({ onSearch }) {
     }
     try {
       const response = await axios.get(
-        "https://admin.history-state.kz/api/v1/search/",
+        "http://admin.history-state.kz/api/v1/search/",
         {
           params: { query, model: selectedModel },
         }
@@ -263,7 +263,7 @@ function App() {
       </div> */}
       {/* <div className="absolute z-50  mt-6 xl:right-[22%] lg:right-[10%] lg:block  hidden ">
         <img
-          className="hidden xl:block lg:block"
+          className="hidden xl:block lg:block mt-1 "
           id="specialButton"
           style={{ cursor: "pointer" }}
           src="/pdf/eye.png"

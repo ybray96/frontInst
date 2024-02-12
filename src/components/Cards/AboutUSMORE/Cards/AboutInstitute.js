@@ -414,7 +414,7 @@ function AboutUs() {
                                 alt="Facebook Icon"
                               />
                                <SocialLink
-                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
+                                href="http://admin.history-state.kz/://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />

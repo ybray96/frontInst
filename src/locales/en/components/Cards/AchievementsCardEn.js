@@ -12,7 +12,7 @@ function AchievementsCardEn() {
     const fetchAchievements = async () => {
       try {
         const { data } = await axios.get(
-          "https://admin.history-state.kz/api/v1/achievements-list/",
+          "http://admin.history-state.kz/api/v1/achievements-list/",
           {
             withCredentials: true,
           }
@@ -66,7 +66,7 @@ function AchievementsCardEn() {
         >
           <img
             className="h-48 w-96"
-            src={`https://admin.history-state.kz${achievement.image}`}
+            src={`https://institut.hello-olzhas.kz${achievement.image}`}
             alt=""
           />
           <div className="p-4 flex flex-col">

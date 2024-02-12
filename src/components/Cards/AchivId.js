@@ -11,7 +11,7 @@ function AchivId() {
       try {
         if (id) {
           const { data } = await axios.get(
-            `https://admin.history-state.kz/api/v1/achievements-list/${id}/`,
+            `http://admin.history-state.kz/api/v1/achievements-list/${id}/`,
             {
               withCredentials: true,
             }

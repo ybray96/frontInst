@@ -17,7 +17,7 @@ function AppliedStudiesCardEn() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://admin.history-state.kz/api/v1/applied-research-list/"
+          "http://admin.history-state.kz/api/v1/applied-research-list/"
         );
         setData(response.data.data);
       } catch (error) {
@@ -64,7 +64,7 @@ function AppliedStudiesCardEn() {
   };
 
   const pageCount = Math.ceil(filteredData.length / itemsPerPage);
-  const mediaUrl = "https://admin.history-state.kz/media/";
+  const mediaUrl = "http://admin.history-state.kz/media/";
   return (
     <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-nunito">
       <div className="flex justify-between flex-row  gap-2 mt-3 items-center ">

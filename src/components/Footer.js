@@ -181,12 +181,6 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full h-[1px] bg-[#FFFFFF] bg-opacity-40 mt-4"></div>
-      <span className="block text-sm text-gray-500 sm:text-center font-semibold dark:text-gray-400 mt-5">
-        <a href="#" className="hover:underline">
-          © Copyright 2013. Институт истории государства
-        </a>
-      </span>
     </footer>
   );
 }

@@ -16,7 +16,7 @@ function ExVisionCard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://admin.history-state.kz/api/v1/expert-opinion-list/"
+          "http://admin.history-state.kz/api/v1/expert-opinion-list/"
         );
         //  // Add this line
         setNewsData(response.data.data.reverse());
@@ -84,7 +84,7 @@ function NewsItem({ title, description, imageSrc, date }) {
       <div className="p-5 flex items-center">
         <img
           className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-md"
-          src={`https://admin.history-state.kz${imageSrc}`}
+          src={`https://institut.hello-olzhas.kz${imageSrc}`}
           alt=""
         />
         <div className="pl-2">

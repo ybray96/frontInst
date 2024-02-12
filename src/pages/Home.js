@@ -12,7 +12,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://admin.history-state.kz/api/v1/main-list/"
+          "http://admin.history-state.kz/api/v1/main-list/"
         );
 
         // console.log("API Response:", response.data);
@@ -25,7 +25,7 @@ function Home() {
           if (firstItem && firstItem.image) {
             //
 
-            const absoluteImageUrl = `https://admin.history-state.kz/${firstItem.image}`;
+            const absoluteImageUrl = `http://admin.history-state.kz/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );

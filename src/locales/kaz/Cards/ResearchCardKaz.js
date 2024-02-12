@@ -20,7 +20,7 @@ function ResearchCardKaz() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `https://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
+          `http://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }
@@ -34,7 +34,7 @@ function ResearchCardKaz() {
 
     fetchArticle();
   }, [id]);
-  const mediaUrl = "https://admin.history-state.kz/media/";
+  const mediaUrl = "http://admin.history-state.kz/media/";
 
   // Assuming htmlContent is the HTML content and mediaUrl is the variable containing the replacement URL
   const sanitizedHtmlContent = article.full_text_kk

@@ -18,7 +18,7 @@ function ResearchCardEn() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `https://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
+          `http://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }
@@ -38,7 +38,7 @@ function ResearchCardEn() {
     // Replace '/media/' with the dynamic media URL from the backend
     return htmlContent.replace(/\/media\//g, (match) => {
       // Replace this with the actual media URL from the backend
-      return `https://admin.history-state.kz${match}`;
+      return `https://institut.hello-olzhas.kz${match}`;
     });
   };
 

@@ -17,14 +17,14 @@ function TheNewsCard() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `https://admin.history-state.kz/api/v1/news-list/${id}/`,
+          `http://admin.history-state.kz/api/v1/news-list/${id}/`,
           {
             withCredentials: true,
           }
         );
 
         // Replace '/media/' with the dynamic media URL from the backend
-        const mediaUrl = "https://admin.history-state.kz/media/"; // Replace with your actual media URL
+        const mediaUrl = "http://admin.history-state.kz/media/"; // Replace with your actual media URL
         data.full_text = data.full_text.replace(/\/media\//g, (match) => {
           return mediaUrl + match.replace("/media/", "");
         });
