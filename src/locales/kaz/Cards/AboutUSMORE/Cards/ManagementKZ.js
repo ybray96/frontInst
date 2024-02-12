@@ -621,6 +621,9 @@ function ManagementKZ() {
             </header>
           </div>
         </div>
+        <div class=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
+          <div class="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
+        </div>
       </div>
 
       <ProfileInfo />

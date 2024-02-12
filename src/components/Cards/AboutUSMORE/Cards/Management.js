@@ -411,7 +411,7 @@ function Management() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -597,6 +597,9 @@ function Management() {
               </nav>
             </header>
           </div>
+        </div>
+        <div class=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
+          <div class="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
         </div>
       </div>
 
