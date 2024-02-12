@@ -66,7 +66,7 @@ function AchievementsCardEn() {
         >
           <img
             className="h-48 w-96"
-            src={`https://institut.hello-olzhas.kz${achievement.image}`}
+            src={`http://admin.history-state.kz${achievement.image}`}
             alt=""
           />
           <div className="p-4 flex flex-col">

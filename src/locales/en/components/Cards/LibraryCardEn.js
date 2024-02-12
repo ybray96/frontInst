@@ -162,7 +162,7 @@ useEffect(() => {
                 id={item.id}
                 title={item.title_en}
                 date={item.minidescription_en}
-                imageSrc={`https://institut.hello-olzhas.kz${item.image}`}
+                imageSrc={`http://admin.history-state.kz${item.image}`}
                 link={`http://admin.history-state.kz/${item.file}`}
               />
             ))}

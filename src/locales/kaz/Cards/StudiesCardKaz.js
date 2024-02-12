@@ -51,7 +51,7 @@ function StudiesCardKaz() {
     <div className=" rounded-xl w-full xl:flex lg:flex-col bg-white border border-gray-200  relative hover:underline transition duration-300 ease-in-out hover:bg-[#dcd9d9]">
       <img
         className="h-44 w-full rounded-t-xl"
-        src={`https://institut.hello-olzhas.kz${imageSrc}`}
+        src={`http://admin.history-state.kz${imageSrc}`}
         alt=""
       />
 

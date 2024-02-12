@@ -199,7 +199,7 @@ function FooterEn() {
                 <SocialLink
                   href="#"
                   iconSrc={tiktok}
-                  alt="TikTok sIcon"
+                  alt="Twitter sIcon"
                 ></SocialLink>
               </div>
             </div>

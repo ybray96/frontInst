@@ -38,7 +38,7 @@ function ResearchCardEn() {
     // Replace '/media/' with the dynamic media URL from the backend
     return htmlContent.replace(/\/media\//g, (match) => {
       // Replace this with the actual media URL from the backend
-      return `https://institut.hello-olzhas.kz${match}`;
+      return `http://admin.history-state.kz${match}`;
     });
   };
 
@@ -73,7 +73,7 @@ function ResearchCardEn() {
           )}
 
           <Link to="/en/studies" className="mt-4">
-            <span className="text-blue-600 underline hover:text-purple-700">
+            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ml-4">
               Go back
             </span>
           </Link>

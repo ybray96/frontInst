@@ -643,7 +643,7 @@ function CouncilKaz() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://institut.hello-olzhas.kz${scientist.image}`}
+                src={`http://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name_kk}
                 className="w-full object-cover h-64"
               />

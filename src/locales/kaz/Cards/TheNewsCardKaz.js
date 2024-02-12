@@ -65,7 +65,7 @@ function TheNewsCardKaz() {
           )}
 
           <Link to="/newsblock" className="mt-4">
-            <span className="text-blue-600 underline hover:text-purple-700">
+            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ml-2">
               Қайту
             </span>
           </Link>

@@ -14,7 +14,7 @@ import Rectangle76 from "../images/Rectangle 76.png";
 import Rectangle77 from "../images/Rectangle 77.png";
 import Rectangle78 from "../images/Rectangle 78.png";
 import Rectangle79 from "../images/Rectangle 79.png";
-import Rectangle75 from "../images/Rectangle 75.png"
+import Rectangle75 from "../images/Rectangle 75.png";
 function HomeCard() {
   function NewsItem({ title, date, imageSrc }) {
     return (
@@ -22,17 +22,17 @@ function HomeCard() {
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
         <div className="relative p-5">
-          <h5 className="lg:text-lg text-md font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20 line-clamp-3">
+          <h5 className="text-base  font-semibold tracking-tight text-gray-900 md:h-16 lg:h-20 line-clamp-3">
             {title}
           </h5>
 
-          <div className=" mb-2 absolute -top-14 h-[56px]   px-1 w-[78px] right-14 bg-stone-800">
+          <div className=" mb-2 absolute -top-12 h-[48px]   px-1 w-[60px] right-14 bg-stone-800">
             <p className=" font-normal text-white  whitespace-pre-line text-sm text-left   mt-2 px-1">
               {date}
             </p>
           </div>
-          <div className="mb-2 absolute -top-14 w-[59px] h-[56px] right-0 bg-[#2C4FA4] hover:bg-black transition duration-500 ease-in-out flex items-center justify-center">
-            <p className="font-normal text-white lg:text-4xl text-2xl">→</p>
+          <div className="mb-2 absolute -top-12 w-[56px] h-[48px] right-0 bg-[#2C4FA4] hover:bg-black transition duration-500 ease-in-out flex items-center justify-center">
+            <p className="font-normal text-white  text-2xl">→</p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ function HomeCard() {
   const resources = [
     {
       href: "https://sun9-44.userapi.com/impg/eXfdWf2mII4PBXvpfRd702I7S1r1fB4HIdAn9A/TR5qS9pTwEU.jpg?size=227x128&quality=96&sign=f5051ec18d06053dbc23b1c13aeb7f20&type=album",
-      imgSrc: Rectangle75 ,
+      imgSrc: Rectangle75,
       altText: "Image",
       text: "Послания народу Казахстана",
     },
@@ -114,9 +114,9 @@ function HomeCard() {
         const response = await axios.get(
           "http://admin.history-state.kz/api/v1/news-list/"
         );
-
+        const limitedNews = response.data.slice(0,8);
         // Обновление состояния компонента данными из ответа API
-        setNews(response.data);
+        setNews(limitedNews);
       } catch (error) {
         // Обработка ошибок
         console.error("Error fetching news:", error);
@@ -154,7 +154,7 @@ function HomeCard() {
         <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 md:grid-cols-2 gap-4 mt-20 ">
           <Link to="/ru/ourachievements">
             {" "}
-            <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
+            <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out rounded-md">
               <p className="p-4 text-4xl  font-semibold transition duration-200 ease-in-out ">
                 3382
               </p>
@@ -167,7 +167,7 @@ function HomeCard() {
 
           <Link to="/ru/studies">
             {" "}
-            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
+            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out  rounded-md ">
               <p className=" p-4  text-4xl  font-semibold transition duration-200">
                 23
               </p>
@@ -178,7 +178,7 @@ function HomeCard() {
           </Link>
           <Link to="/ru/library">
             {" "}
-            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
+            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out  rounded-md ">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
                 99
               </p>
@@ -190,7 +190,7 @@ function HomeCard() {
 
           <Link to="/ru/Council">
             {" "}
-            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out">
+            <div className=" shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out  rounded-md ">
               <p className="p-4 text-4xl transition duration-200  font-semibold">
                 42
               </p>
@@ -229,7 +229,7 @@ function HomeCard() {
         </div>
         <div className="flex justify-center">
           {" "}
-          <Link to="/ru/newsblock" className="lg:mt-4 mt-8">
+          <Link to="/ru/newsblock" className=" mt-8">
             <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
               Показать все новости
             </span>
@@ -253,7 +253,7 @@ function HomeCard() {
                     className="h-[50%] w-full object-cover rounded-t-md"
                   />
                   <div className="text-center bg-white rounded-b-md py-6 ">
-                    <p className="text-black font-bold whitespace-nowrap  text-[13.2px] md:text-base lg:text-base xl:text-base underline overflow-hidden">
+                    <p className="text-black font-bold whitespace-nowrap  text-[13.2px] md:text-base lg:text-base xl:text-base  overflow-hidden">
                       {resource.text}
                     </p>
                   </div>

@@ -4,9 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import "react-calendar/dist/Calendar.css";
 
-import arrow2 from "../components/SVG/arrow2.svg";
 import tiktok from "./SVG/tiktok.svg";
-import Calendar from "react-calendar";
+
 import kk from "date-fns/locale/kk";
 
 function FooterKaz() {
@@ -188,7 +187,7 @@ function FooterKaz() {
                 <SocialLink
                   href="https://twitter.com/tarih_institut"
                   iconSrc={tiktok}
-                  alt="TikTok Icon"
+                  alt="Twitter Icon"
                 ></SocialLink>
               </div>
             </div>

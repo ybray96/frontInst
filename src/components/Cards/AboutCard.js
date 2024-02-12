@@ -156,7 +156,7 @@ function AboutCard() {
               <div className="flex flex-col">
                 <div className="mt-2 text-center">
                   <Link to="/ru/aboutus/AboutInstitute/">
-                    <button className="text-slate-800 text-xl font-normal  hover:text-blue-400 underline">
+                    <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                       Показать больше
                     </button>
                   </Link>
@@ -234,7 +234,7 @@ function AboutCard() {
               </div>
               <div className="flex flex-col mt-2 text-center">
                 <Link to="/ru/aboutus/Management/">
-                  <button className="text-[#2C4FA4] text-xl font-normal hover:underline hover:text-blue-400">
+                  <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                     Показать руководство
                   </button>
                 </Link>
@@ -416,7 +416,7 @@ function AboutCard() {
                 <div className="flex flex-col">
                   <div className="mt-2 text-center">
                     <Link to="/ru/young-scientists">
-                      <button className="text-slate-800 text-xl font-normal hover:underline hover:text-blue-400">
+                      <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                         Показать ученых
                       </button>
                     </Link>

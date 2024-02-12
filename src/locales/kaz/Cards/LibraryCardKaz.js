@@ -163,7 +163,7 @@ function LibraryCardKaz() {
                 id={item.id}
                 title={item.title_kk}
                 date={item.minidescription_kk}
-                imageSrc={`https://institut.hello-olzhas.kz${item.image}`}
+                imageSrc={`http://admin.history-state.kz${item.image}`}
                 link={`http://admin.history-state.kz/${item.file}`}
               />
             ))}

@@ -174,7 +174,7 @@ function Footer() {
                 <SocialLink
                   href="https://twitter.com/tarih_institut"
                   iconSrc={tiktok}
-                  alt="TikTok Icon"
+                  alt="Twitter Icon"
                 ></SocialLink>
               </div>
             </div>

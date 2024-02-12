@@ -638,7 +638,7 @@ function CouncilEn() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://institut.hello-olzhas.kz${scientist.image}`}
+                src={`http://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name_en}
                 className="w-full object-cover h-64 "
               />
@@ -690,7 +690,7 @@ function CouncilEn() {
           <CouncilPerson />
         </div>
         <Link to="/en/aboutus">
-          <button className="px-2 text-lg font-nunito hover:text-blue-400">
+          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Go back
           </button>
         </Link>

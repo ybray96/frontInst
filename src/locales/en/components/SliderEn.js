@@ -74,7 +74,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`https://institut.hello-olzhas.kz${item.image}`}
+                  src={`http://admin.history-state.kz${item.image}`}
                   alt={`Слайд ${index + 1}`}
                    className="w-full  lg:h-64 md:h-48 h-48 rounded object-cover "
                 />
@@ -91,7 +91,7 @@ const SliderKaz = () => {
               >
                 {/* Изображение слайда */}
                 <img
-                  src={`https://institut.hello-olzhas.kz${
+                  src={`http://admin.history-state.kz${
                     sliderData[(index + 1) % sliderData.length].image
                   }`}
                   alt={`Слайд ${((index + 1) % sliderData.length) + 1}`}
@@ -175,7 +175,7 @@ const SlideModal = ({ isOpen, onClose, data, nextData }) => {
           </p>
         )}
         <img
-          src={`https://institut.hello-olzhas.kz${data.image}`}
+          src={`http://admin.history-state.kz${data.image}`}
           alt={`Slide Image`}
           className="w-full h-48 rounded object-cover mb-4"
         />

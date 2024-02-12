@@ -69,10 +69,10 @@ function ProfileInfo() {
         ))}
       </div>
       <Link to="/ru/aboutus">
-        <button className=" px-2  text-lg font-nunito  hover:text-blue-400">
-          Вернуться назад
-        </button>
-      </Link>
+          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+            Вернуться назад
+          </button>
+        </Link>
     </div>
   );
 }
