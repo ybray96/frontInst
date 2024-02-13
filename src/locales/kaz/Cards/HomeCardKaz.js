@@ -251,7 +251,7 @@ function HomeCardKaz() {
 
         <div className="flex justify-center">
           {" "}
-          <Link to="/newsblock" className="mt-12">
+          <Link to="/newsblock" className="lg:mt-12 mt-6">
             <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
               Барлық жаңалықтарды көрсету
             </span>
@@ -260,7 +260,7 @@ function HomeCardKaz() {
 
         {/* РЕСУРСЫ */}
         <div className="w-full mt-25 font-nunito   ">
-          <h1 className="text-[#505050] font-semibold text-lg mt-2 mb-6">
+          <h1 className="text-[#505050] font-semibold text-lg lg:mt-2 mt-6 mb-4">
             Ресурстар
           </h1>
           <Slider {...settings}>

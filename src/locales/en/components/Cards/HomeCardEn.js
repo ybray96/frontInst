@@ -229,7 +229,7 @@ function HomeCardEn() {
 
         <div className="flex justify-center">
           {" "}
-          <Link to="/en/newsblock" className="mt-12">
+          <Link to="/en/newsblock" className="lg:mt-12 mt-6">
             <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
               Show all news
             </span>
@@ -241,7 +241,7 @@ function HomeCardEn() {
           </p>
         </Link> */}
         <div className="w-full mt-25">
-          <h1 className="text-[#505050] font-semibold text-lg mt-2 mb-6">
+        <h1 className="text-[#505050] font-semibold text-lg lg:mt-2 mt-6 mb-4">
             Resources
           </h1>
           <Slider {...settings}>
