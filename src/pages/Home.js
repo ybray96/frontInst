@@ -7,24 +7,12 @@ import { useEffect } from "react";
 import axios from "axios";
 function Home() {
   const [backgroundImage, setBackgroundImage] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [ setSearchResults] = useState([]);
-  const handleSearch = async (query, model) => {
-    try {
-      const response = await axios.get(
-        `https://admin.history-state.kz/api/v1/search/?query=${query}&model=${model}`
-      );
-      setSearchResults(response.data);
-    } catch (error) {
-      console.error("Error fetching search results:", error);
-      setSearchResults([]);
-    }
-  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://admin.history-state.kz/api/v1/main-list/"
+          "http://admin.history-state.kz/api/v1/main-list/"
         );
 
         // console.log("API Response:", response.data);
@@ -37,7 +25,7 @@ function Home() {
           if (firstItem && firstItem.image) {
             //
 
-            const absoluteImageUrl = `https://admin.history-state.kz/${firstItem.image}`;
+            const absoluteImageUrl = `http://admin.history-state.kz/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );
@@ -88,20 +76,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full absolute font-nunito bg-[#e4e4e4]">
-      <div>
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Введите запрос для поиска..."
-        />
-        <button onClick={handleSearch}>Поиск</button>
-      </div>
 
-      {/* Остальной код вашего компонента */}
-    </div>
-  );
       <HomeCard />
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>
       <Footer />

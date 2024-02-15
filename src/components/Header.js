@@ -6,7 +6,7 @@ import arrow from "./SVG/arrow.svg";
 import tiktok from "../components/SVG/tiktok.svg";
 import rec from "../components/PDF/recommendations.pdf";
 import useVisualImpairmentScript from "./Hooks/useEye";
-import SearchComponent from "./Search/Search";
+
 function SocialLink({ href, iconSrc, alt }) {
   return (
     <a href={href}>
@@ -60,7 +60,7 @@ function Header() {
                 </div>
               </Link>
               <div className="flex items-center gap-4 sm:gap-4">
-                <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"><SearchComponent /></div>
+                <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                 <div className="flex items-center">
                   {/* <img
@@ -87,7 +87,7 @@ function Header() {
                         }`}
                       ></img>
                     </button>
-                        
+
                     {isDropdownOpen && (
                       <div className="absolute z-10 mt-3 ml-8   w-[80px] bg-black  divide-y divide-gray-200 rounded-lg shadow-lg">
                         <ul>
