@@ -10,7 +10,7 @@ function SearchComponent() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://admin.history-state.kz/api/global-search/?query=${searchQuery}`
+        `https://admin.history-state.kz/api/search/?query=${searchQuery}`
       );
       setSearchResults(response.data);
     } catch (error) {
