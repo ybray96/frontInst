@@ -130,7 +130,7 @@ function FooterEn() {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-5 ">
         <div className="flex flex-col gap-5 md:flex-row md:justify-between">
           <div className="flex flex-col gap-5 md:w-1/3">
-            <span className="text-xl font-semibold text-[#333]">
+            <span className="text-xl font-semibold text-[#333] text-center">
               Citizen reception:
             </span>
 
@@ -182,10 +182,10 @@ function FooterEn() {
           </div> */}
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="flex flex-col md:w-1/3">
-              <span className="text-xl font-semibold whitespace-nowrap">
+              <span className="text-xl font-semibold whitespace-nowrap text-center">
                 Our SNS:
               </span>
-              <div className="flex gap-5 mt-5">
+              <div className="flex gap-5 mt-5 mx-auto">
                 <SocialLink
                   href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
                   iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"

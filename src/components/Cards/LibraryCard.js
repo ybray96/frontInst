@@ -37,6 +37,7 @@ function LibraryCard() {
             withCredentials: true,
           }
         );
+        console.log(data)
         // Установка данных библиотеки в стейт с обратным порядком
         setLibrary(data.data.reverse());
       } catch (error) {

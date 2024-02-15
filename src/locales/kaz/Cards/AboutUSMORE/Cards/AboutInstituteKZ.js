@@ -113,7 +113,7 @@ function AboutInstituteKZ() {
                         title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
                         onClick={handleSpecialButtonClick}
                       /> */}
-                      
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -431,7 +431,7 @@ function AboutInstituteKZ() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -646,12 +646,14 @@ function AboutInstituteKZ() {
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
         <p className="mt-4 text-xl">
-          Біздің институт жетекші ғылыми-зерттеу мекемесі болып табылады
-          Қазақстан тарихын зерттеу. Біз кең спектрмен айналысамыз бай және көп
-          қырлы тарихты ашуға бағытталған іс-шаралар біздің елден. Біздің
-          құрылғаннан бері біздің басты мақсатымыз және Қазақстанның өткеніне
-          сүңгу керек оның эволюциясы мен қазіргі заманға әсері туралы
-          түсінігімізді байытады қоғам.
+          Мемлекет тарихы институтының (бұдан әрі - Институт) мақсаты -
+          Қазақстанның қазіргі заманғы тарихының жүйелі және теориялық
+          негіздемесіне сүйене отырып, мемлекеттік және тарихи сананы
+          қалыптастыру процесін ғылыми-талдамалық және сараптамалық жағынан
+          қамтамасыз ету. Институт ұжымы жоғары кәсіби деңгейімен ерекшеленеді,
+          кейбір қызметкерлері ағылшын, түрік тілдерін еркін меңгерген, бұл
+          жоғары кәсіби кадрлық әлеует институттың алға қойған мақсаттарын
+          орындауында маңызды рөл атқарады
         </p>
       </div>
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>

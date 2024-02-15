@@ -16,7 +16,7 @@ function StudiesCard() {
         const response = await axios.get(
           "http://admin.history-state.kz/api/v1/foundation-study-list/"
         );
-        // 
+        //
         setFoundationStudyData(response.data.data);
       } catch (error) {
         console.error("Error fetching foundation study data:", error);
@@ -216,7 +216,7 @@ function StudiesCard() {
       {/* Pagination */}
       <div className="flex justify-center my-4 ">
         <ReactPaginate
-           className="flex gap-4 items-center"
+          className="flex gap-4 items-center"
           pageCount={pageCount}
           pageRangeDisplayed={5}
           marginPagesDisplayed={2}
