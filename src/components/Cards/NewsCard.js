@@ -104,7 +104,7 @@ function NewsCard() {
     const fetchRecentNews = async () => {
       try {
         const { data } = await axios.get(
-          "http://91.147.92.207/api/v1/news-list/",
+          "https://admin.history-state.kz/api/v1/news-list/",
           { withCredentials: true }
         );
         setRecentNews(data.slice(-6).reverse());
