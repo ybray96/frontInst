@@ -7,6 +7,9 @@ import historybg from "../../../../components/images/historybg.png";
 import HistoryCardEn from "../Cards/HistoryCardEn";
 import { Link } from "react-router-dom";
 import useVisualImpairmentScript from "../../../../components/Hooks/useEye";
+import useSearchHook from "../../../../components/Hooks/useSearch";
+import SearchForm from "../../../../components/Hooks/SearchForm";
+import SearchFormEn from "../../../../components/Hooks/searchEN/SearchEn";
 
 function HistoryEn() {
   const [backgroundImage, setBackgroundImage] = useState(historybg);
@@ -25,7 +28,7 @@ function HistoryEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -34,7 +37,15 @@ function HistoryEn() {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(" ENG");
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -49,6 +60,16 @@ function HistoryEn() {
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
   };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   return (
     <div className="w-full bg-[#e4e4e4]  ">
       <div
@@ -84,19 +105,28 @@ function HistoryEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                      <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
-                     
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -414,7 +444,7 @@ function HistoryEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"

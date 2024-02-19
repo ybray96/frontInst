@@ -9,6 +9,8 @@ import Footer from "../../../Footer";
 import About from "../../../images/AboutUs.png";
 import { useEffect } from "react";
 import useVisualImpairmentScript from "../../../Hooks/useEye";
+import useSearchHook from "../../../Hooks/useSearch";
+import SearchForm from "../../../Hooks/SearchForm";
 
 function AboutUs() {
   useEffect(() => {
@@ -21,7 +23,15 @@ function AboutUs() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("РУС");
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -37,7 +47,17 @@ function AboutUs() {
     // При монтировании компонента, прокручиваем страницу наверх
     window.scrollTo(0, 0);
   }, []);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
+const {
+  query,
+  selectedModel,
+  searchResults,
+  setQuery,
+  setSelectedModel,
+  handleInputChange,
+  handleClearClick,
+  handleSubmit,
+} = useSearchHook();
   function SocialLink({ href, iconSrc, alt }) {
     return (
       <a href={href}>
@@ -81,18 +101,28 @@ function AboutUs() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchForm
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -413,8 +443,8 @@ function AboutUs() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
-                                href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
+                              <SocialLink
+                                href="http://admin.history-state.kz/://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
                               />
@@ -602,13 +632,12 @@ function AboutUs() {
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
         <p className="mt-4 text-xl">
-          Наш институт является ведущим научно-исследовательским учреждением,
-          посвященным изучению истории Казахстана. Мы занимаемся обширным
-          спектром деятельности, направленным на раскрытие богатой и
-          многогранной истории нашей страны. С момента своего основания нашей
-          главной целью было и остается погружение в прошлое Казахстана с целью
-          обогатить наше понимание его эволюции и влияния на современное
-          общество.
+          Некоммерческая научно-исследовательская организация, обладающая
+          статусом юридического лица, созданная в организационно-правовой форме
+          государственного учреждения для осуществления функцией
+          научно-аналитического обеспечения процесса строительства
+          государственного формирования и исторического сознания, теоретического
+          осмысления современной истории Казахстана
         </p>
       </div>
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>

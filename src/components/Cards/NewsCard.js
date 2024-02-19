@@ -88,7 +88,7 @@ function NewsCard() {
     const fetchNews = async () => {
       try {
         const { data } = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/news-list/",
+          "http://admin.history-state.kz/api/v1/news-list/",
           { withCredentials: true }
         );
         setNews(data);

@@ -7,6 +7,8 @@ import FooterKaz from "../components/FooterKaz";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import useVisualImpairmentScript from "../../../components/Hooks/useEye";
+import SearchFormKK from "../../../components/Hooks/SearchKK/SearchFormKK";
+import useSearchHook from "../../../components/Hooks/useSearch";
 function SocialLink({ href, iconSrc, alt }) {
   return (
     <a href={href}>
@@ -37,13 +39,13 @@ function RecomendationKZ() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
   useEffect(() => {
     // Функция для выполнения запроса к API
     const fetchRecommendations = async () => {
       try {
         const { data } = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/recomendation-list/",
+          "http://admin.history-state.kz/api/v1/recomendation-list/",
           {
             withCredentials: true,
           }
@@ -79,8 +81,27 @@ function RecomendationKZ() {
     setCurrentPage(selected);
   };
 
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   const pageCount = Math.ceil(filteredRecommendations.length / itemsPerPage);
-
+ 
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   return (
     <div className="w-full absolute  font-nunito bg-[#e4e4e4] ">
       {/* url(${backgroundImage}) */}
@@ -121,17 +142,27 @@ function RecomendationKZ() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormKK
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                          <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                      
                       <div className="relative inline-block text-white">
                         <button
@@ -763,7 +794,7 @@ function RecomendationKZ() {
                     <td className="px-4 py-4 border-b border-gray-300">
                       <a
                         download
-                        href={`https://institut.hello-olzhas.kz/${recommendation.file}`}
+                        href={`http://admin.history-state.kz/${recommendation.file}`}
                         className="font-medium text-white hover:underline w-1/6 bg-[#0069B5] py-1 px-2 rounded-full"
                       >
                         ЖҮКТЕУ

@@ -8,6 +8,8 @@ import About from "../../../../components/images/AboutUs.png";
 import FooterEn from "../FooterEn";
 import AboutCardEn from "../Cards/AboutCardEn";
 import useVisualImpairmentScript from "../../../../components/Hooks/useEye";
+import SearchFormEn from "../../../../components/Hooks/searchEN/SearchEn";
+import useSearchHook from "../../../../components/Hooks/useSearch";
 
 function AboutUsEn() {
   useEffect(() => {
@@ -24,11 +26,29 @@ function AboutUsEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -85,18 +105,28 @@ function AboutUsEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
-                    <div className="flex items-center">
-                      {/*<img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
-                        src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */} 
                     
+                    <div className="flex items-center">
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
+                        src="/pdf/eye.png"
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"

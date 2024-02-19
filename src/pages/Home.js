@@ -5,16 +5,14 @@ import Footer from "../components/Footer";
 import HomeCard from "../components/Cards/HomeCard";
 import { useEffect } from "react";
 import axios from "axios";
-import useVisualImpairmentScript from "../components/Hooks/useEye";
 function Home() {
-    const [open, setOpen] = useState(true)
   const [backgroundImage, setBackgroundImage] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/main-list/"
+          "http://admin.history-state.kz/api/v1/main-list/"
         );
 
         // console.log("API Response:", response.data);
@@ -27,7 +25,7 @@ function Home() {
           if (firstItem && firstItem.image) {
             //
 
-            const absoluteImageUrl = `https://institut.hello-olzhas.kz/${firstItem.image}`;
+            const absoluteImageUrl = `http://admin.history-state.kz/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );
@@ -51,15 +49,9 @@ function Home() {
     // Scroll to the top on component mount
     window.scrollTo(0, 0);
   }, []);
-    useVisualImpairmentScript();
 
   return (
     <div className="w-full absolute  font-nunito bg-[#e4e4e4]  ">
-        <a href="#" onClick={() => {
-            new window.isvek.Bvi()
-        }} className="bvi-open">Версия сайта для слабовидящих</a>
-        <div className="bvi-hide">The text will be hidden when the plugin is enabled.</div>
-
       {/* url(${backgroundImage}) */}
       <div
         className="xl:h-[600px] md:h-full h-[150px] relative"

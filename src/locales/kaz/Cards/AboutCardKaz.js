@@ -28,7 +28,7 @@ function AboutCardKaz() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "https://institut.hello-olzhas.kz/api/v1/institutes-structure-list/"
+        "http://admin.history-state.kz/api/v1/institutes-structure-list/"
       );
       // console.log(response.data);
       return response.data;
@@ -51,7 +51,7 @@ function AboutCardKaz() {
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
-  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
+  const mediaUrl = "http://admin.history-state.kz/media/";
   return (
     <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-nunito ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">
@@ -157,7 +157,7 @@ function AboutCardKaz() {
               <div className="flex flex-col">
                 <div className="mt-2 text-center">
                   <Link to="/aboutus/AboutInstitute/">
-                    <button className="text-slate-800 text-xl font-normal  hover:text-blue-400 underline">
+                    <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                       Көбірек көрсету
                     </button>
                   </Link>
@@ -233,7 +233,7 @@ function AboutCardKaz() {
               </div>
               <div className="flex flex-col mt-2 text-center">
                 <Link to="/aboutus/Management/">
-                  <button className="text-[#2C4FA4] text-xl font-normal hover:underline hover:text-blue-400">
+                  <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                     Басшылық көрсету
                   </button>
                 </Link>
@@ -418,7 +418,7 @@ function AboutCardKaz() {
                 <div className="flex flex-col">
                   <div className="mt-2 text-center">
                     <Link to="/young-scientists">
-                      <button className="text-slate-800 text-xl font-normal hover:underline hover:text-blue-400">
+                      <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
                         Жас ғалымдар көрсету
                       </button>
                     </Link>

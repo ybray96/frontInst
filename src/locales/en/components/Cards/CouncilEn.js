@@ -9,6 +9,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import FooterEn from "../FooterEn";
 import useVisualImpairmentScript from "../../../../components/Hooks/useEye";
+import SearchForm from "../../../../components/Hooks/SearchForm";
+import useSearchHook from "../../../../components/Hooks/useSearch";
+import SearchFormEn from "../../../../components/Hooks/searchEN/SearchEn";
 
 function CouncilEn() {
   useEffect(() => {
@@ -20,7 +23,17 @@ function CouncilEn() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -30,6 +43,15 @@ function CouncilEn() {
     setIsDropdownOpen(false);
   };
   const toggleNav = () => setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleState = (stateSetter) => stateSetter((prevState) => !prevState);
   useEffect(() => {
     // При монтировании компонента, прокручиваем страницу наверх
@@ -44,6 +66,7 @@ function CouncilEn() {
       </a>
     );
   }
+
   const HeaderCouncil = () => {
     return (
       <>
@@ -72,18 +95,27 @@ function CouncilEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                        <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
 
                       <div className="relative inline-block text-white">
                         <button
@@ -402,7 +434,7 @@ function CouncilEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -615,7 +647,7 @@ function CouncilEn() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
+      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -638,7 +670,7 @@ function CouncilEn() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://institut.hello-olzhas.kz${scientist.image}`}
+                src={`http://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name_en}
                 className="w-full object-cover h-64 "
               />
@@ -690,7 +722,7 @@ function CouncilEn() {
           <CouncilPerson />
         </div>
         <Link to="/en/aboutus">
-          <button className="px-2 text-lg font-nunito hover:text-blue-400">
+          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Go back
           </button>
         </Link>

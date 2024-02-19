@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import ourachievements from "../components/images/ourachievements.png";
 import AchievementsCard from "../components/Cards/AchievementsCard";
 import useVisualImpairmentScript from "../components/Hooks/useEye";
+import SearchForm from "../components/Hooks/SearchForm";
+import useSearchHook from "../components/Hooks/useSearch";
 
 function OurAchievements() {
   useEffect(() => {
@@ -22,7 +24,15 @@ function OurAchievements() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("РУС");
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -37,7 +47,17 @@ function OurAchievements() {
     // При монтировании компонента, прокручиваем страницу наверх
     window.scrollTo(0, 0);
   }, []);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   function SocialLink({ href, iconSrc, alt }) {
     return (
       <a href={href}>
@@ -81,18 +101,28 @@ function OurAchievements() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+     
 
                     <div className="flex items-center">
-                      {/* {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                    <SearchForm
+                    query={query}
+                    selectedModel={selectedModel}
+                    searchResults={searchResults}
+                    setQuery={setQuery}
+                    setSelectedModel={setSelectedModel}
+                    onInputChange={handleInputChange}
+                    onClearClick={handleClearClick}
+                    onSubmit={handleSubmit}
+                    onSearch={(results) => {}}
+                  />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */} 
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -408,7 +438,7 @@ function OurAchievements() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"

@@ -8,6 +8,8 @@ import FooterEn from "../../../FooterEn";
 
 import ProfileInfo from "./ProfileInfoEn";
 import useVisualImpairmentScript from "../../../../../../components/Hooks/useEye";
+import SearchForm from "../../../../../../components/Hooks/SearchForm";
+import useSearchHook from "../../../../../../components/Hooks/useSearch";
 
 function ManagementEn() {
   useEffect(() => {
@@ -23,7 +25,26 @@ function ManagementEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
+const {
+  query,
+  selectedModel,
+  searchResults,
+  setQuery,
+  setSelectedModel,
+  handleInputChange,
+  handleClearClick,
+  handleSubmit,
+} = useSearchHook();
+const [bviInstance, setBviInstance] = useState(null);
+const handleEyeClick = () => {
+  // Проверяем, открыто ли уже окно
+  if (!bviInstance) {
+    // Если нет, то создаем новый экземпляр
+    const newBviInstance = new window.isvek.Bvi();
+    setBviInstance(newBviInstance);
+  }
+};
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -52,7 +73,7 @@ function ManagementEn() {
       <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://th.bing.com/th/id/OIG.HrXXqhDDdsqbVnpRok3O?w=1024&h=1024&rs=1&pid=ImgDetMain)`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://sun9-65.userapi.com/impg/z89Zpgt_lCA7-ZlX5Kav7mKPhkO2cnYidASAhw/l3eNW2qAZck.jpg?size=1920x638&quality=96&sign=d520cf9aa8274c752e13a1207d13876b&type=album)`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -82,19 +103,29 @@ function ManagementEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchForm
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
-                     
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -412,7 +443,7 @@ function ManagementEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -617,6 +648,9 @@ function ManagementEn() {
               </nav>
             </header>
           </div>
+        </div>
+        <div class=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
+          <div class="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
         </div>
       </div>
 

@@ -8,6 +8,8 @@ import FooterKaz from "../components/FooterKaz";
 import About from "../../../components/images/AboutUs.png";
 import AboutCardKaz from "../Cards/AboutCardKaz";
 import useVisualImpairmentScript from "../../../components/Hooks/useEye";
+import SearchFormKK from "../../../components/Hooks/SearchKK/SearchFormKK";
+import useSearchHook from "../../../components/Hooks/useSearch";
 
 function AboutUsKaz() {
   function SocialLink({ href, iconSrc, alt }) {
@@ -20,7 +22,7 @@ function AboutUsKaz() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -44,7 +46,26 @@ function AboutUsKaz() {
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
   };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
+  const [bviInstance, setBviInstance] = useState(null);
 
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   return (
     <div className="w-full bg-[#e4e4e4]  ">
       <div
@@ -84,17 +105,27 @@ function AboutUsKaz() {
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
 
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
                     <div className="flex items-center">
-                      {/* {/* {/* {/* {/* {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormKK
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */} 
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
 
                       <div className="relative inline-block text-white">
                         <button
@@ -412,7 +443,7 @@ function AboutUsKaz() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"

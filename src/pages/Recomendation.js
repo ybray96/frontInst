@@ -8,6 +8,8 @@ import rec from "../components/PDF/recommendations.pdf";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import useVisualImpairmentScript from "../components/Hooks/useEye";
+import useSearchHook from "../components/Hooks/useSearch";
+import SearchForm from "../components/Hooks/SearchForm";
 function SocialLink({ href, iconSrc, alt }) {
   return (
     <a href={href}>
@@ -39,13 +41,21 @@ function Recomendation() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   useEffect(() => {
     // Функция для выполнения запроса к API
     const fetchRecommendations = async () => {
       try {
         const { data } = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/recomendation-list/",
+          "http://admin.history-state.kz/api/v1/recomendation-list/",
           {
             withCredentials: true,
           }
@@ -58,7 +68,17 @@ function Recomendation() {
 
     fetchRecommendations();
   }, []);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
   const [searchTerm, setSearchTerm] = useState("");
@@ -119,17 +139,26 @@ function Recomendation() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchForm
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                        <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -450,7 +479,7 @@ function Recomendation() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -736,7 +765,7 @@ function Recomendation() {
                     <td className="px-4 py-4 border-b border-gray-300">
                       <a
                         download
-                        href={`https://institut.hello-olzhas.kz/${recommendation.file}`}
+                        href={`http://admin.history-state.kz/${recommendation.file}`}
                         className="font-medium text-white hover:underline w-1/6 bg-[#0069B5] py-1 px-2 rounded-full"
                       >
                         СКАЧАТЬ

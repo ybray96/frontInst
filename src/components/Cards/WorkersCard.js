@@ -9,9 +9,9 @@ function WorkersCard() {
   const [workersPerPage] = useState(10);
 
   useEffect(() => {
-    const apiUrl = "https://institut.hello-olzhas.kz/api/v1/scientists-list/";
+    const apiUrl = "http://admin.history-state.kz/api/v1/scientists-list/";
 
-    if (!apiUrl.startsWith("https://")) {
+    if (!apiUrl.startsWith("http://") && !apiUrl.startsWith("https://")) {
       console.error("Invalid API URL protocol");
       return;
     }
@@ -32,7 +32,6 @@ function WorkersCard() {
         console.error("Error fetching data from API:", error);
       });
   }, []);
-
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -84,7 +83,7 @@ function WorkersCard() {
                 >
                   <td className="p-4 flex items-center border border-gray-300">
                     <img
-                      src={`https://institut.hello-olzhas.kz${item.image}`}
+                      src={`http://admin.history-state.kz${item.image}`}
                       alt={item.name}
                       className="w-16 h-16 rounded-full"
                     />
@@ -127,8 +126,8 @@ function WorkersCard() {
           </ul>
         </nav>
       </div>
-      <Link to="/aboutus">
-        <button className="text-lg hover:text-blue-400 p-4">
+      <Link to="/ru/aboutus">
+        <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
           Вернуться назад
         </button>
       </Link>

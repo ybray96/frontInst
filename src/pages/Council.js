@@ -8,6 +8,8 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { useEffect } from "react";
 import useVisualImpairmentScript from "../components/Hooks/useEye";
+import SearchForm from "../components/Hooks/SearchForm";
+import useSearchHook from "../components/Hooks/useSearch";
 
 function Council() {
   useEffect(() => {
@@ -19,7 +21,15 @@ function Council() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("РУС");
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -43,6 +53,17 @@ function Council() {
       </a>
     );
   }
+  const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   const HeaderCouncil = () => {
     return (
       <div className="bg-transparent font-nunito">
@@ -68,17 +89,26 @@ function Council() {
                   </div>
                 </Link>
                 <div className="flex items-center gap-4 sm:gap-4">
-                  <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
-
                   <div className="flex items-center">
-                    {/* <img
-                      className="hidden xl:block lg:block"
-                      id="specialButton"
-                      style={{ cursor: "pointer" }}
+                    <SearchForm
+                      query={query}
+                      selectedModel={selectedModel}
+                      searchResults={searchResults}
+                      setQuery={setQuery}
+                      setSelectedModel={setSelectedModel}
+                      onInputChange={handleInputChange}
+                      onClearClick={handleClearClick}
+                      onSubmit={handleSubmit}
+                      onSearch={(results) => {}}
+                    />
+                    <img
                       src="/pdf/eye.png"
-                      alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                      title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                    /> */}
+                      alt="Версия сайта для слабовидящих"
+                      title="Версия сайта для слабовидящих"
+                      onClick={handleEyeClick}
+                      className="bvi-open lg:block hidden"
+                      style={{ cursor: "pointer" }}
+                    />
                     <div className="relative inline-block text-white">
                       <button
                         id="dropdownDefaultButton"
@@ -595,12 +625,12 @@ function Council() {
       </div>
     );
   };
- // const handleSpecialButtonClick = useVisualImpairmentScript();
+  // const handleSpecialButtonClick = useVisualImpairmentScript();
   const CouncilPerson = () => {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
+      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -623,7 +653,7 @@ function Council() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://institut.hello-olzhas.kz${scientist.image}`}
+                src={`http://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name}
                 className="w-full object-cover h-64"
               />
@@ -677,7 +707,7 @@ function Council() {
           <CouncilPerson />
         </div>
         <Link to="/ru/aboutus">
-          <button className="px-2 text-lg font-nunito hover:text-blue-400">
+          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Вернуться назад
           </button>
         </Link>

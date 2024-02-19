@@ -16,7 +16,7 @@ function AppliedStudiesCardRu() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/applied-research-list/"
+          "http://admin.history-state.kz/api/v1/applied-research-list/"
         );
         setData(response.data.data);
       } catch (error) {
@@ -63,7 +63,7 @@ function AppliedStudiesCardRu() {
   };
 
   const pageCount = Math.ceil(filteredData.length / itemsPerPage);
-  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
+  const mediaUrl = "http://admin.history-state.kz/media/";
   return (
     <>
       <div className="flex flex-col mx-auto max-w-screen-xl px-4 py-2">

@@ -7,6 +7,8 @@ import FooterEn from "../../../FooterEn";
 
 import About from "../../../../../../components/images/AboutUs.png";
 import useVisualImpairmentScript from "../../../../../../components/Hooks/useEye";
+import SearchFormEn from "../../../../../../components/Hooks/searchEN/SearchEn";
+import useSearchHook from "../../../../../../components/Hooks/useSearch";
 
 function AboutInstituteEn() {
   function SocialLink({ href, iconSrc, alt }) {
@@ -19,7 +21,7 @@ function AboutInstituteEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -28,7 +30,15 @@ function AboutInstituteEn() {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(" ENG");
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -43,6 +53,16 @@ function AboutInstituteEn() {
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
   };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   useEffect(() => {
     // При монтировании компонента, прокручиваем страницу наверх
     window.scrollTo(0, 0);
@@ -82,19 +102,29 @@ function AboutInstituteEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
-                     
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -419,7 +449,7 @@ function AboutInstituteEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -629,12 +659,12 @@ function AboutInstituteEn() {
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
         <p className="mt-4 text-xl">
-          Our institute is a leading research institution Study of the history
-          of Kazakhstan. We are engaged in a wide range of rich and many events
-          aimed at revealing the faceted history from our country. Our since its
-          foundation, our main goal and the past of Kazakhstan it is necessary
-          to dive on its evolution and influence on the modern enriches our
-          understanding of society.
+          Non-commercial scientific research organization, possessing the status
+          of a legal entity, established in the organizational and legal form of
+          a state institution to fulfill the functions of scientific-analytical
+          support of the process of building state formation and historical
+          consciousness, theoretical comprehension of the modern history of
+          Kazakhstan
         </p>
       </div>
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>

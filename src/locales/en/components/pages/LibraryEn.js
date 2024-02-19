@@ -8,6 +8,9 @@ import FooterEn from "../FooterEn";
 import library from "../../../../components/images/library.png";
 import LibraryCardEn from "../Cards/LibraryCardEn";
 import useVisualImpairmentScript from "../../../../components/Hooks/useEye";
+import SearchForm from "../../../../components/Hooks/SearchForm";
+import useSearchHook from "../../../../components/Hooks/useSearch";
+import SearchFormEn from "../../../../components/Hooks/searchEN/SearchEn";
 
 function LibraryEn() {
   useEffect(() => {
@@ -24,7 +27,7 @@ function LibraryEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -37,7 +40,15 @@ function LibraryEn() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     setIsDropdownOpen(false);
@@ -48,6 +59,16 @@ function LibraryEn() {
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
   };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   return (
     <div className="w-full bg-[#e4e4e4]  ">
       <div
@@ -83,17 +104,27 @@ function LibraryEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       
                       <div className="relative inline-block text-white">
                         <button

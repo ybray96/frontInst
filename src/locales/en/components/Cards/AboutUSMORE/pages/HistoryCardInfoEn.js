@@ -9,6 +9,8 @@ import FooterEn from "../../../FooterEn";
 import historybg from "../../../../../../components/images/achievement.png";
 import TheHistoryCardInfoEn from "../TheHistoryCardInfoEn";
 import useVisualImpairmentScript from "../../../../../../components/Hooks/useEye";
+import useSearchHook from "../../../../../../components/Hooks/useSearch";
+import SearchForm from "../../../../../../components/Hooks/SearchForm";
 
 function HistoryCardInfoEn() {
   useEffect(() => {
@@ -25,7 +27,15 @@ function HistoryCardInfoEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -34,7 +44,17 @@ function HistoryCardInfoEn() {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(" ENG");
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
+const {
+  query,
+  selectedModel,
+  searchResults,
+  setQuery,
+  setSelectedModel,
+  handleInputChange,
+  handleClearClick,
+  handleSubmit,
+} = useSearchHook();
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -123,18 +143,28 @@ function HistoryCardInfoEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchForm
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       
                       <div className="relative inline-block text-white">
                         <button

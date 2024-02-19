@@ -14,9 +14,9 @@ function StudiesCard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://institut.hello-olzhas.kz/api/v1/foundation-study-list/"
+          "http://admin.history-state.kz/api/v1/foundation-study-list/"
         );
-        // 
+        //
         setFoundationStudyData(response.data.data);
       } catch (error) {
         console.error("Error fetching foundation study data:", error);
@@ -50,7 +50,7 @@ function StudiesCard() {
     <div className=" rounded-xl w-full xl:flex lg:flex-col bg-white border border-gray-200  relative hover:underline transition duration-300 ease-in-out hover:bg-[#dcd9d9]">
       <img
         className="h-44 w-full rounded-t-xl"
-        src={`https://institut.hello-olzhas.kz${imageSrc}`}
+        src={`http://admin.history-state.kz${imageSrc}`}
         alt=""
       />
 
@@ -216,7 +216,7 @@ function StudiesCard() {
       {/* Pagination */}
       <div className="flex justify-center my-4 ">
         <ReactPaginate
-           className="flex gap-4 items-center"
+          className="flex gap-4 items-center"
           pageCount={pageCount}
           pageRangeDisplayed={5}
           marginPagesDisplayed={2}

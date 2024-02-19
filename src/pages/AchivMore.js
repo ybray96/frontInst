@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import logo from "../components/images/logo.png";
 import AchivId from "../components/Cards/AchivId";
 import useVisualImpairmentScript from "../components/Hooks/useEye";
+import useSearchHook from "../components/Hooks/useSearch";
+import SearchForm from "../components/Hooks/SearchForm";
 function AchivMore() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +20,15 @@ function AchivMore() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("РУС");
   const [showHistory, setShowHistory] = useState(false);
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -28,6 +38,7 @@ function AchivMore() {
     setIsDropdownOpen(false);
   };
   const toggleNav = () => setIsNavOpen((prevIsNavOpen) => !prevIsNavOpen);
+
   const toggleState = (stateSetter) => stateSetter((prevState) => !prevState);
   useEffect(() => {
     // При монтировании компонента, прокручиваем страницу наверх
@@ -43,6 +54,16 @@ function AchivMore() {
     );
   }
   const handleSpecialButtonClick = useVisualImpairmentScript();
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   return (
     <div className="w-full bg-[#e4e4e4] font-nunito ">
       <div
@@ -78,18 +99,26 @@ function AchivMore() {
                     </div>
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
-
                     <div className="flex items-center">
-                      {/* {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchForm
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */} 
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -405,7 +434,7 @@ function AchivMore() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"

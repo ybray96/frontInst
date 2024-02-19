@@ -36,20 +36,22 @@ const profiles = [
 function ProfileInfo() {
   return (
     <div className="max-w-screen-xl mx-auto font-nunito ">
-      <div className="mt-2 grid xl:grid-cols-4  md:grid-cols-2 grid-cols-2 gap-2 xl:gap-0 ">
+  <div className="mt-4 grid xl:grid-cols-4  md:grid-cols-4 grid-cols-2 lg:w-[89%] w-full mx-auto">
         {profiles.map((profile, index) => (
-          <div key={index} className="mb-6 w-full">
+          <div key={index} className=" mb-4">
             <div className="px-2">
               <img
                 src={profile.photo}
                 alt={`Фотография ${profile.name}`}
-                className="w-full  object-cover"
+                className="w-full  object-cover rounded-t-md"
               />
 
-              <div className="bg-[#2C4FA4] p-2 text-white rounded-b-md flex relative ">
+              <div className="bg-[#2C4FA4] p-2 lg:h-24 md:h-28 h-32 text-white rounded-b-md flex relative ">
                 <div>
-                  <p className="text-lg">{profile.name}</p>
-                  <p className="text-[#CFCFCF]">{profile.post}</p>
+                  <p className="text-base">{profile.name}</p>
+                  <p className="text-[#CFCFCF] tracking-tighter">
+                    {profile.post}
+                  </p>
                 </div>
                 <div className="mt-5">
                   <a
@@ -59,7 +61,7 @@ function ProfileInfo() {
                   >
                     <img
                       src={orcid}
-                      className="object-cover absolute right-2 top-8 "
+                      className="object-cover absolute right-2 lg:top-8 "
                     />
                   </a>
                 </div>
@@ -67,12 +69,12 @@ function ProfileInfo() {
             </div>
           </div>
         ))}
+        <Link to="/ru/aboutus">
+          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+            Вернуться назад
+          </button>
+        </Link>
       </div>
-      <Link to="/ru/aboutus">
-        <button className=" px-2  text-lg font-nunito  hover:text-blue-400">
-          Вернуться назад
-        </button>
-      </Link>
     </div>
   );
 }

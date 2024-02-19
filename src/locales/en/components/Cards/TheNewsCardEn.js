@@ -21,14 +21,14 @@ function TheNewsCardEn() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `https://institut.hello-olzhas.kz/api/v1/news-list/${id}/`,
+          `http://admin.history-state.kz/api/v1/news-list/${id}/`,
           {
             withCredentials: true,
           }
         );
 
         // Replace '/media/' with the dynamic media URL from the backend
-        const mediaUrl = "https://institut.hello-olzhas.kz/media/"; // Replace with your actual media URL
+        const mediaUrl = "http://admin.history-state.kz/media/"; // Replace with your actual media URL
         data.full_text = data.full_text_en.replace(/\/media\//g, (match) => {
           return mediaUrl + match.replace("/media/", "");
         });
@@ -66,7 +66,7 @@ function TheNewsCardEn() {
           )}
 
           <Link to="/en/newsblock" className="mt-4">
-            <span className="text-blue-600 underline hover:text-purple-700">
+            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ml-2">
               Go back
             </span>
           </Link>

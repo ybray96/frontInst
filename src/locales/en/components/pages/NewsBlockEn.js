@@ -8,6 +8,8 @@ import FooterEn from "../FooterEn";
 import NewsCardEn from "../Cards/NewsCardEn";
 import { Link } from "react-router-dom";
 import useVisualImpairmentScript from "../../../../components/Hooks/useEye";
+import SearchFormEn from "../../../../components/Hooks/searchEN/SearchEn";
+import useSearchHook from "../../../../components/Hooks/useSearch";
 
 function NewsBlockEn() {
   useEffect(() => {
@@ -24,7 +26,7 @@ function NewsBlockEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -37,7 +39,15 @@ function NewsBlockEn() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
     setIsDropdownOpen(false);
@@ -48,6 +58,16 @@ function NewsBlockEn() {
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
   };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
   return (
     <div className="w-full absolute bg-[#e4e4e4] inter ">
       <div
@@ -85,17 +105,27 @@ function NewsBlockEn() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormEn
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                         <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
                       
                       <div className="relative inline-block text-white">
                         <button

@@ -9,6 +9,9 @@ import FooterKaz from "../../../components/FooterKaz";
 
 import About from "../../../../../components/images/AboutUs.png";
 import useVisualImpairmentScript from "../../../../../components/Hooks/useEye";
+import useSearchHook from "../../../../../components/Hooks/useSearch";
+import SearchForm from "../../../../../components/Hooks/SearchForm";
+import SearchFormKK from "../../../../../components/Hooks/SearchKK/SearchFormKK";
 
 function AboutInstituteKZ() {
   useEffect(() => {
@@ -25,7 +28,7 @@ function AboutInstituteKZ() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -48,6 +51,25 @@ function AboutInstituteKZ() {
   };
   const toggleState = (stateSetter) => {
     stateSetter((prevState) => !prevState);
+  };
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
   };
   return (
     <div className="w-full bg-[#e4e4e4] min-h-screen   ">
@@ -101,19 +123,29 @@ function AboutInstituteKZ() {
                         </button>
                       </div>
                     </div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
+                    
 
                     <div className="flex items-center">
-                      {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormKK
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                        <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */}
-                      
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -431,7 +463,7 @@ function AboutInstituteKZ() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -646,12 +678,11 @@ function AboutInstituteKZ() {
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
         <p className="mt-4 text-xl">
-          Біздің институт жетекші ғылыми-зерттеу мекемесі болып табылады
-          Қазақстан тарихын зерттеу. Біз кең спектрмен айналысамыз бай және көп
-          қырлы тарихты ашуға бағытталған іс-шаралар біздің елден. Біздің
-          құрылғаннан бері біздің басты мақсатымыз және Қазақстанның өткеніне
-          сүңгу керек оның эволюциясы мен қазіргі заманға әсері туралы
-          түсінігімізді байытады қоғам.
+          Қазақстанның қазіргі тарихын теориялық негіздеу, мемлекеттік құрылыс
+          және тарихи сананы қалыптастыру процесін ғылыми-сараптамалық
+          қамтамасыз ету функциясын жүзеге асыру мақсатында мемлекеттік мекеме
+          ретінде құқықтық нысанада құрылған заңды тұлға мәртебесіндегі
+          коммерциялық емес ғылыми-зерттеу ұйымы
         </p>
       </div>
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>

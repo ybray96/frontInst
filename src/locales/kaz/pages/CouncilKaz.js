@@ -8,6 +8,8 @@ import FooterKaz from "../components/FooterKaz";
 import axios from "axios";
 import { useEffect } from "react";
 import useVisualImpairmentScript from "../../../components/Hooks/useEye";
+import SearchFormKK from "../../../components/Hooks/SearchKK/SearchFormKK";
+import useSearchHook from "../../../components/Hooks/useSearch";
 
 function CouncilKaz() {
   useEffect(() => {
@@ -19,7 +21,7 @@ function CouncilKaz() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("КАЗ");
   const [showHistory, setShowHistory] = useState(false);
-  // const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () =>
     setShowHistory((prevShowHistory) => !prevShowHistory);
   const toggleDropdown = () =>
@@ -43,6 +45,25 @@ function CouncilKaz() {
       </a>
     );
   }
+  const {
+    query,
+    selectedModel,
+    searchResults,
+    setQuery,
+    setSelectedModel,
+    handleInputChange,
+    handleClearClick,
+    handleSubmit,
+  } = useSearchHook();
+  const [bviInstance, setBviInstance] = useState(null);
+  const handleEyeClick = () => {
+    // Проверяем, открыто ли уже окно
+    if (!bviInstance) {
+      // Если нет, то создаем новый экземпляр
+      const newBviInstance = new window.isvek.Bvi();
+      setBviInstance(newBviInstance);
+    }
+  };
   const HeaderCouncil = () => {
     return (
       <>
@@ -74,18 +95,27 @@ function CouncilKaz() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    <div className="hidden sm:flex flex-row items-center w-full h-10 px-2 rounded-lg bg-transparent"></div>
 
                     <div className="flex items-center">
-                      {/* {/* {/* {/* {/* {/* <img
-                        className="hidden xl:block lg:block"
-                        id="specialButton"
-                        style={{ cursor: "pointer" }}
+                      <SearchFormKK
+                        query={query}
+                        selectedModel={selectedModel}
+                        searchResults={searchResults}
+                        setQuery={setQuery}
+                        setSelectedModel={setSelectedModel}
+                        onInputChange={handleInputChange}
+                        onClearClick={handleClearClick}
+                        onSubmit={handleSubmit}
+                        onSearch={(results) => {}}
+                      />
+                        <img
                         src="/pdf/eye.png"
-                        alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
-                        onClick={handleSpecialButtonClick}
-                      /> */} 
+                        alt="Версия сайта для слабовидящих"
+                        title="Версия сайта для слабовидящих"
+                        onClick={handleEyeClick}
+                        className="bvi-open "
+                        style={{ cursor: "pointer" }}
+                      />
 
                       <div className="relative inline-block text-white">
                         <button
@@ -405,7 +435,7 @@ function CouncilKaz() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -620,7 +650,7 @@ function CouncilKaz() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
+      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -643,7 +673,7 @@ function CouncilKaz() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`https://institut.hello-olzhas.kz${scientist.image}`}
+                src={`http://admin.history-state.kz${scientist.image}`}
                 alt={scientist.name_kk}
                 className="w-full object-cover h-64"
               />
