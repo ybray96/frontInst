@@ -51,7 +51,7 @@ function ManagementKZ() {
       <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://sun9-65.userapi.com/impg/z89Zpgt_lCA7-ZlX5Kav7mKPhkO2cnYidASAhw/l3eNW2qAZck.jpg?size=1920x638&quality=96&sign=d520cf9aa8274c752e13a1207d13876b&type=album)`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(https://th.bing.com/th/id/OIG.HrXXqhDDdsqbVnpRok3O?w=1024&h=1024&rs=1&pid=ImgDetMain)`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -620,9 +620,6 @@ function ManagementKZ() {
               </nav>
             </header>
           </div>
-        </div>
-        <div class=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div class="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
         </div>
       </div>
 

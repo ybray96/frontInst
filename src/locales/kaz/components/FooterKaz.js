@@ -4,8 +4,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import "react-calendar/dist/Calendar.css";
 
+import arrow2 from "../components/SVG/arrow2.svg";
 import tiktok from "./SVG/tiktok.svg";
-
+import Calendar from "react-calendar";
 import kk from "date-fns/locale/kk";
 
 function FooterKaz() {
@@ -132,7 +133,7 @@ function FooterKaz() {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-5 font-nunito">
         <div className="flex flex-col gap-5 md:flex-row md:justify-between">
           <div className="flex flex-col gap-5 md:w-1/3">
-            <span className="text-xl font-semibold text-[#333] text-center">
+            <span className="text-xl font-semibold text-[#333]">
               Азаматтарды қабылдау:
             </span>
 
@@ -161,7 +162,7 @@ function FooterKaz() {
           <div className="flex flex-col  mt-5 md:mt-0">
             <center>
               {" "}
-              <span className="font-semibold text-xl text-[#333] ">
+              <span className="font-semibold text-xl text-[#333]">
                 Кері байланыс:
               </span>
               <br />
@@ -170,10 +171,10 @@ function FooterKaz() {
           </div>
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="flex flex-col md:w-1/3">
-              <span className="text-xl font-semibold text-center">
+              <span className="text-xl font-semibold ">
                 Әлеуметтік желілер:
               </span>
-              <div className="flex gap-5 mt-5 mx-auto">
+              <div className="flex gap-5 mt-5">
                 <SocialLink
                   href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"
                   iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
@@ -187,13 +188,19 @@ function FooterKaz() {
                 <SocialLink
                   href="https://twitter.com/tarih_institut"
                   iconSrc={tiktok}
-                  alt="Twitter Icon"
+                  alt="TikTok Icon"
                 ></SocialLink>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="w-full h-[1px] bg-[#FFFFFF] bg-opacity-40 "></div>
+      <span className="block text-sm text-gray-500 sm:text-center font-semibold dark:text-gray-400 mt-5 ">
+        <a href="#" className="hover:underline">
+          @Copyright 2013. Мемлекет тарихы институты
+        </a>
+      </span>
     </footer>
   );
 }

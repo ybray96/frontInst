@@ -94,7 +94,7 @@ function AboutInstituteEn() {
                         title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"
                         onClick={handleSpecialButtonClick}
                       /> */}
-
+                     
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
@@ -419,7 +419,7 @@ function AboutInstituteEn() {
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                              <SocialLink
+                               <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -629,12 +629,12 @@ function AboutInstituteEn() {
 
       <div className=" flex flex-col mx-auto max-w-screen-xl   px-4 text-lg ">
         <p className="mt-4 text-xl">
-          Non-commercial scientific research organization, possessing the status
-          of a legal entity, established in the organizational and legal form of
-          a state institution to fulfill the functions of scientific-analytical
-          support of the process of building state formation and historical
-          consciousness, theoretical comprehension of the modern history of
-          Kazakhstan
+          Our institute is a leading research institution Study of the history
+          of Kazakhstan. We are engaged in a wide range of rich and many events
+          aimed at revealing the faceted history from our country. Our since its
+          foundation, our main goal and the past of Kazakhstan it is necessary
+          to dive on its evolution and influence on the modern enriches our
+          understanding of society.
         </p>
       </div>
       <div className="w-full h-[1px] bg-[#D4D4D4]  mt-20"></div>

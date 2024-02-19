@@ -31,7 +31,7 @@ function AboutCard() {
   const fetchInstituteStructure = async () => {
     try {
       const response = await axios.get(
-        "http://admin.history-state.kz/api/v1/institutes-structure-list/"
+        "https://institut.hello-olzhas.kz/api/v1/institutes-structure-list/"
       );
 
       return response.data;
@@ -50,7 +50,7 @@ function AboutCard() {
     fetchData();
   }, []);
   const [expandedItemId, setExpandedItemId] = useState(null);
-  const mediaUrl = "http://admin.history-state.kz/media/";
+  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
   const handleItemClick = (itemId) => {
     setExpandedItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
@@ -156,7 +156,7 @@ function AboutCard() {
               <div className="flex flex-col">
                 <div className="mt-2 text-center">
                   <Link to="/ru/aboutus/AboutInstitute/">
-                    <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+                    <button className="text-slate-800 text-xl font-normal  hover:text-blue-400 underline">
                       Показать больше
                     </button>
                   </Link>
@@ -234,7 +234,7 @@ function AboutCard() {
               </div>
               <div className="flex flex-col mt-2 text-center">
                 <Link to="/ru/aboutus/Management/">
-                  <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+                  <button className="text-[#2C4FA4] text-xl font-normal hover:underline hover:text-blue-400">
                     Показать руководство
                   </button>
                 </Link>
@@ -416,7 +416,7 @@ function AboutCard() {
                 <div className="flex flex-col">
                   <div className="mt-2 text-center">
                     <Link to="/ru/young-scientists">
-                      <button className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+                      <button className="text-slate-800 text-xl font-normal hover:underline hover:text-blue-400">
                         Показать ученых
                       </button>
                     </Link>

@@ -11,7 +11,7 @@ function HomeKaz() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://admin.history-state.kz/api/v1/main-list/"
+          "https://institut.hello-olzhas.kz/api/v1/main-list/"
         );
 
         const dataArray = response.data.data;
@@ -20,7 +20,7 @@ function HomeKaz() {
           const firstItem = dataArray[0];
 
           if (firstItem && firstItem.image) {
-            const absoluteImageUrl = `http://admin.history-state.kz/${firstItem.image}`;
+            const absoluteImageUrl = `https://institut.hello-olzhas.kz/${firstItem.image}`;
             setBackgroundImage(
               `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${absoluteImageUrl})`
             );

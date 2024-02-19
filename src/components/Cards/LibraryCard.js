@@ -32,12 +32,11 @@ function LibraryCard() {
     const fetchLibrary = async () => {
       try {
         const { data } = await axios.get(
-          "http://admin.history-state.kz/api/v1/science-library-list/",
+          "https://institut.hello-olzhas.kz/api/v1/science-library-list/",
           {
             withCredentials: true,
           }
         );
-        console.log(data)
         // Установка данных библиотеки в стейт с обратным порядком
         setLibrary(data.data.reverse());
       } catch (error) {
@@ -163,8 +162,8 @@ function LibraryCard() {
                 id={item.id}
                 title={item.title}
                 date={item.minidescription}
-                imageSrc={`http://admin.history-state.kz${item.image}`}
-                link={`http://admin.history-state.kz/${item.file}`}
+                imageSrc={`https://institut.hello-olzhas.kz${item.image}`}
+                link={`https://institut.hello-olzhas.kz/${item.file}`}
               />
             ))}
           </div>

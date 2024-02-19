@@ -615,7 +615,7 @@ function CouncilEn() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
+      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -638,7 +638,7 @@ function CouncilEn() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`http://admin.history-state.kz${scientist.image}`}
+                src={`https://institut.hello-olzhas.kz${scientist.image}`}
                 alt={scientist.name_en}
                 className="w-full object-cover h-64 "
               />
@@ -690,7 +690,7 @@ function CouncilEn() {
           <CouncilPerson />
         </div>
         <Link to="/en/aboutus">
-          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+          <button className="px-2 text-lg font-nunito hover:text-blue-400">
             Go back
           </button>
         </Link>

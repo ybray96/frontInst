@@ -600,7 +600,7 @@ function Council() {
     const [scientists, setScientists] = useState([]);
 
     const scientistsApiEndpoint =
-      "http://admin.history-state.kz/api/v1/scientists-sovet-list/";
+      "https://institut.hello-olzhas.kz/api/v1/scientists-sovet-list/";
 
     useEffect(() => {
       const fetchScientists = async () => {
@@ -623,7 +623,7 @@ function Council() {
           <div key={scientist.id} className="mb-6 w-full">
             <div className="px-2">
               <img
-                src={`http://admin.history-state.kz${scientist.image}`}
+                src={`https://institut.hello-olzhas.kz${scientist.image}`}
                 alt={scientist.name}
                 className="w-full object-cover h-64"
               />
@@ -675,10 +675,9 @@ function Council() {
       <div className="max-w-screen-xl mx-auto font-nunito">
         <div className="mt-2 grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-2 xl:gap-0">
           <CouncilPerson />
-          
         </div>
         <Link to="/ru/aboutus">
-          <button className=" ml-2 text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
+          <button className="px-2 text-lg font-nunito hover:text-blue-400">
             Вернуться назад
           </button>
         </Link>

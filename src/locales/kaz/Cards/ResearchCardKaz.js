@@ -20,7 +20,7 @@ function ResearchCardKaz() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `http://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
+          `https://institut.hello-olzhas.kz/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }
@@ -34,7 +34,7 @@ function ResearchCardKaz() {
 
     fetchArticle();
   }, [id]);
-  const mediaUrl = "http://admin.history-state.kz/media/";
+  const mediaUrl = "https://institut.hello-olzhas.kz/media/";
 
   // Assuming htmlContent is the HTML content and mediaUrl is the variable containing the replacement URL
   const sanitizedHtmlContent = article.full_text_kk
@@ -72,7 +72,7 @@ function ResearchCardKaz() {
           )}
 
           <Link to="/studies" className="mt-4">
-            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ml-4">
+            <span className="text-blue-600 underline hover:text-purple-700">
               Артқа қайту
             </span>
           </Link>

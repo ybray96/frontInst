@@ -45,7 +45,7 @@ function Recomendation() {
     const fetchRecommendations = async () => {
       try {
         const { data } = await axios.get(
-          "http://admin.history-state.kz/api/v1/recomendation-list/",
+          "https://institut.hello-olzhas.kz/api/v1/recomendation-list/",
           {
             withCredentials: true,
           }
@@ -736,7 +736,7 @@ function Recomendation() {
                     <td className="px-4 py-4 border-b border-gray-300">
                       <a
                         download
-                        href={`http://admin.history-state.kz/${recommendation.file}`}
+                        href={`https://institut.hello-olzhas.kz/${recommendation.file}`}
                         className="font-medium text-white hover:underline w-1/6 bg-[#0069B5] py-1 px-2 rounded-full"
                       >
                         СКАЧАТЬ

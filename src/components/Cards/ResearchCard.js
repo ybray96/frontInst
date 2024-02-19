@@ -17,7 +17,7 @@ function ResearchCard() {
     const fetchArticle = async () => {
       try {
         const { data } = await axios.get(
-          `http://admin.history-state.kz/api/v1/foundation-study-list/${id}/`,
+          `https://institut.hello-olzhas.kz/api/v1/foundation-study-list/${id}/`,
           {
             withCredentials: true,
           }
@@ -32,13 +32,6 @@ function ResearchCard() {
     fetchArticle();
   }, [id]);
 
-  const mediaUrl = "http://admin.history-state.kz/media/";
-
-  // Assuming htmlContent is the HTML content and mediaUrl is the variable containing the replacement URL
-  const sanitizedHtmlContent = article.full_text
-    ? DOMPurify.sanitize(article.full_text.replace("/media/", mediaUrl))
-    : "";
-
   return (
     <div className="px-4 flex flex-col mx-auto max-w-screen-xl font-nunito">
       <div className="w-full">
@@ -48,7 +41,7 @@ function ResearchCard() {
               <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: sanitizedHtmlContent,
+                  __html: DOMPurify.sanitize(article.full_text),
                 }}
                 className="text-lg"
               />
@@ -70,7 +63,7 @@ function ResearchCard() {
           )}
 
           <Link to="/ru/studies" className="mt-4">
-            <span className="text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ml-4">
+            <span className="text-blue-600 underline hover:text-purple-700">
               Вернуться назад
             </span>
           </Link>

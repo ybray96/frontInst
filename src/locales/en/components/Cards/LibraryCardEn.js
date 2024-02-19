@@ -32,7 +32,7 @@ useEffect(() => {
   const fetchLibrary = async () => {
     try {
       const { data } = await axios.get(
-        "http://admin.history-state.kz/api/v1/science-library-list/",
+        "https://institut.hello-olzhas.kz/api/v1/science-library-list/",
         {
           withCredentials: true,
         }
@@ -162,8 +162,8 @@ useEffect(() => {
                 id={item.id}
                 title={item.title_en}
                 date={item.minidescription_en}
-                imageSrc={`http://admin.history-state.kz${item.image}`}
-                link={`http://admin.history-state.kz/${item.file}`}
+                imageSrc={`https://institut.hello-olzhas.kz${item.image}`}
+                link={`https://institut.hello-olzhas.kz/${item.file}`}
               />
             ))}
           </div>
