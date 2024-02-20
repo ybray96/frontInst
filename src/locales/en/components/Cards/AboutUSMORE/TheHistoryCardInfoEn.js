@@ -89,7 +89,7 @@ function  TheHistoryCardInfoEn() {
   }
   
   return (
-    <div className=" px-4 flex flex-col mx-auto max-w-screen-xl   font-nunito ">
+    <div className=" px-4 flex flex-col mx-auto max-w-screen-xl   font-montserrat ">
       {/* карточки */}
       <div>
         <div className="flex flex-col w-full ">

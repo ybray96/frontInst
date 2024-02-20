@@ -65,7 +65,7 @@ function AchivMore() {
     handleSubmit,
   } = useSearchHook();
   return (
-    <div className="w-full bg-[#e4e4e4] font-nunito ">
+    <div className="w-full bg-[#e4e4e4] font-montserrat ">
       <div
         className="relative"
         style={{
@@ -76,7 +76,7 @@ function AchivMore() {
           height: "500px", // Set a fixed height for the image container
         }}
       >
-        <div className="bg-transparent font-nunito">
+        <div className="bg-transparent font-montserrat">
           <div className="p-2">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -123,7 +123,7 @@ function AchivMore() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -623,7 +623,7 @@ function AchivMore() {
         </div>
 
         <div className=" mt-28 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-2xl sm:text-3xl font-semibold text-left  "></div>
+          <div className=" text-left  "></div>
         </div>
       </div>
       <AchivId />

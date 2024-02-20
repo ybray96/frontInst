@@ -44,7 +44,7 @@ function HomeKaz() {
   }, []);
 
   return (
-    <div className="w-full absolute bg-[#e4e4e4] font-nunito">
+    <div className="w-full absolute bg-[#e4e4e4] font-montserrat">
       <div
         className="xl:h-[600px] md:h-full h-[150px] relative"
         style={{
@@ -58,7 +58,7 @@ function HomeKaz() {
       >
         <HeaderKaz />
         <div className="mt-64 sm:mt-36 mx-auto max-w-screen-xl font-['Montserrat']">
-          <div className="p-4 text-white text-2xl sm:text-3xl font-semibold">
+          <div className="">
             <div className="text-[#F0D872] flex-col"></div>
           </div>
         </div>

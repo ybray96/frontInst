@@ -30,7 +30,7 @@ function HistoryCardEn() {
     </div>
   );
   return (
-    <div className=" px-4 py-2 flex flex-col mx-auto max-w-screen-xl   font-nunito ">
+    <div className=" px-4 py-2 flex flex-col mx-auto max-w-screen-xl   font-montserrat ">
       {/* карточки */}
       <div className="">
         <div className="flex flex-col w-full ">

@@ -46,7 +46,7 @@ const SliderKaz = () => {
     setModalOpen(false);
   };
   return (
-    <div className="w-full flex items-center justify-center font-nunito">
+    <div className="w-full flex items-center justify-center font-montserrat">
       {/* Кнопка "Предыдущий слайд" */}
       <button
         onClick={handlePrevClick}

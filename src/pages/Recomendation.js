@@ -104,7 +104,7 @@ function Recomendation() {
   const pageCount = Math.ceil(filteredRecommendations.length / itemsPerPage);
 
   return (
-    <div className="w-full absolute  font-nunito bg-[#e4e4e4] ">
+    <div className="w-full absolute  font-montserrat bg-[#e4e4e4] ">
       {/* url(${backgroundImage}) */}
       <div
         // background надо засунуть в backgroundImage Для адаптивного баннера
@@ -116,7 +116,7 @@ function Recomendation() {
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito">
+        <div className="bg-transparent font-montserrat">
           <div className="p-2">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -163,7 +163,7 @@ function Recomendation() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}

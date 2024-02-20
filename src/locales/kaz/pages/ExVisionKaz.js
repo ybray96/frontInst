@@ -71,7 +71,7 @@ function ExVisionKaz() {
     }
   };
   return (
-    <div className="w-full absolute bg-[#e4e4e4] font-nunito">
+    <div className="w-full absolute bg-[#e4e4e4] font-montserrat">
       <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
         style={{
@@ -134,7 +134,7 @@ function ExVisionKaz() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}

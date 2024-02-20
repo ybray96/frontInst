@@ -40,7 +40,7 @@ function RecomendationEn() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
   useEffect(() => {
     // Функция для выполнения запроса к API
     const fetchRecommendations = async () => {
@@ -101,7 +101,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
   } = useSearchHook();
   const pageCount = Math.ceil(filteredRecommendations.length / itemsPerPage);
   return (
-    <div className="w-full absolute  font-nunito bg-[#e4e4e4] ">
+    <div className="w-full absolute  font-montserrat bg-[#e4e4e4] ">
       {/* url(${backgroundImage}) */}
       <div
         // background надо засунуть в backgroundImage Для адаптивного баннера
@@ -113,7 +113,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito ">
+        <div className="bg-transparent font-montserrat ">
           <div className="p-2 ">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl    ">
@@ -137,7 +137,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    
+
                     <div className="flex items-center">
                       <SearchFormEn
                         query={query}
@@ -150,7 +150,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                         onSubmit={handleSubmit}
                         onSearch={(results) => {}}
                       />
-                         <img
+                      <img
                         src="/pdf/eye.png"
                         alt="Версия сайта для слабовидящих"
                         title="Версия сайта для слабовидящих"
@@ -163,7 +163,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -476,7 +476,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -684,7 +684,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
         </div>
 
         <div className="  mt-64 sm:mt-36 mx-auto max-w-screen-xl   font-['Montserrat']">
-          <div className="p-4 text-white  text-2xl sm:text-3xl font-semibold   ">
+          <div className="">
             <div className="text-[#F0D872] flex-col  ">
               {/* <h2 className="text-5xl font-bold"> 15 қараша</h2>
             <p className="">Ұлттық валюта күні</p>

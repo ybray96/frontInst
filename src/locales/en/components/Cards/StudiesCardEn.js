@@ -88,7 +88,7 @@ function StudiesCard() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-nunito">
+    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-montserrat">
       <div className="flex justify-between flex-row w-full gap-2 mt-3 items-center">
         <div className="flex gap-2 ">
           <div className="text-lg font-bold   text-[#333333]">Main</div>
@@ -96,7 +96,7 @@ function StudiesCard() {
           <div className="text-lg text-[#8d8d8d]">Researches</div>
         </div>
         <Link to="/en">
-          <p className=" underline  text-lg  text-blue-500  hover:text-blue-700 ">
+          <p className=" text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700 ">
             Go back
           </p>
         </Link>

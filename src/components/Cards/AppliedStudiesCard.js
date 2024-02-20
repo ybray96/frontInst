@@ -58,7 +58,7 @@ function AppliedStudiesCard() {
           <div className="text-lg text-[#8d8d8d]">Исследования</div>
         </div>
         <Link to="/en">
-          <p className=" underline  text-lg  text-blue-500  hover:text-blue-700">
+          <p className=" text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Вернуться назад
           </p>
         </Link>

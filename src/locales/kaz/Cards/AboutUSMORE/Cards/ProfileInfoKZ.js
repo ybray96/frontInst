@@ -34,7 +34,7 @@ const profiles = [
 
 function ProfileInfoKZ() {
   return (
-    <div className="max-w-screen-xl mx-auto font-nunito ">
+    <div className="max-w-screen-xl mx-auto font-montserrat ">
       <div className="mt-4 grid xl:grid-cols-4  md:grid-cols-4 grid-cols-2 lg:w-[89%] w-full mx-auto">
         {profiles.map((profile, index) => (
           <div key={index} className=" mb-4">

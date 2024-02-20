@@ -81,7 +81,7 @@ function HistoryEn() {
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito ">
+        <div className="bg-transparent font-montserrat ">
           <div className="p-2 ">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -131,7 +131,7 @@ function HistoryEn() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -653,7 +653,7 @@ function HistoryEn() {
 
         <div className=" mt-48 sm:mt-48 mx-auto max-w-screen-xl   ">
           {/* <div
-          className="p-4 text-white text-3xl font-semibold   "
+          className=""
         dsadsa
         >
           «Modern History»

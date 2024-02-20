@@ -94,7 +94,7 @@ function StudiesCard() {
         </div>
 
         <Link to="/ru">
-          <a className=" underline  text-md  text-blue-500  hover:text-blue-700">
+          <a className=" text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Вернуться назад
           </a>
         </Link>

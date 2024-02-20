@@ -25,7 +25,7 @@ function AppliedStudiesEn() {
     );
   }
   const [showHistory, setShowHistory] = useState(false);
-const handleSpecialButtonClick = useVisualImpairmentScript();
+  const handleSpecialButtonClick = useVisualImpairmentScript();
   const toggleHistory = () => {
     setShowHistory(!showHistory);
   };
@@ -69,7 +69,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
     handleSubmit,
   } = useSearchHook();
   return (
-    <div className="w-full absolute bg-[#e4e4e4] font-nunito ">
+    <div className="w-full absolute bg-[#e4e4e4] font-montserrat ">
       <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
         style={{
@@ -79,7 +79,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito ">
+        <div className="bg-transparent font-montserrat ">
           <div className="p-2 ">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -103,7 +103,6 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    
 
                     <div className="flex items-center">
                       <SearchFormEn
@@ -117,7 +116,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                         onSubmit={handleSubmit}
                         onSearch={(results) => {}}
                       />
-                         <img
+                      <img
                         src="/pdf/eye.png"
                         alt="Версия сайта для слабовидящих"
                         title="Версия сайта для слабовидящих"
@@ -125,12 +124,12 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                         className="bvi-open "
                         style={{ cursor: "pointer" }}
                       />
-                      
+
                       <div className="relative inline-block text-white">
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -443,7 +442,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                                 iconSrc="https://file.rendit.io/n/VJ2UfL7VAYQGCgU6UWPK.svg"
                                 alt="Facebook Icon"
                               />
-                               <SocialLink
+                              <SocialLink
                                 href="https://www.instagram.com/tarih_institut?igsh=MzRlODBiNWFlZA%3D%3D"
                                 iconSrc="https://file.rendit.io/n/6wEPX2PmaqoCS1OaUDsj.svg"
                                 alt="Instagram Icon"
@@ -652,7 +651,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
 
         {/* <hr className="w-full h-[1px] bg-gray-500 bg-opacity-40 "></hr> */}
         <div className=" mt-28 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-3xl font-semibold   ">
+          <div className="">
             <h1>
               {/* «Foreign Policy and regions of Independent Kazakhstan (1991-2021
               years.)» */}

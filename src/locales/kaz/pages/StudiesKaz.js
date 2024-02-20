@@ -130,7 +130,7 @@ function StudiesKaz() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -656,7 +656,7 @@ function StudiesKaz() {
         </div>
 
         <div className=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
+          <div className=""></div>
         </div>
       </div>
       <StudiesCardKaz />

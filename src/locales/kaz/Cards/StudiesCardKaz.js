@@ -17,7 +17,7 @@ function StudiesCardKaz() {
         const response = await axios.get(
           "http://admin.history-state.kz/api/v1/foundation-study-list/"
         );
-        
+
         setFoundationStudyData(response.data.data);
       } catch (error) {
         console.error("Error fetching foundation study data:", error);
@@ -85,7 +85,7 @@ function StudiesCardKaz() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2  font-nunito ">
+    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2  font-montserrat ">
       <div className="flex justify-between flex-row  gap-2 mt-3 items-center ">
         <div className="flex gap-2 ">
           <div className="text-lg font-bold  text-[#333333]">Басты</div>
@@ -93,7 +93,7 @@ function StudiesCardKaz() {
           <div className="text-lg text-[#8d8d8d]">Зерттеу</div>
         </div>
         <Link to="/">
-          <p className=" underline  text-lg  font-normal text-blue-500">
+          <p className=" text-blue-500  border border-blue-500 hover:border-purple-500 py-2.5 px-4 rounded hover:text-purple-700">
             Қайту
           </p>
         </Link>
@@ -220,7 +220,7 @@ function StudiesCardKaz() {
         {/* Pagination */}
         <div className="flex justify-center my-4 ">
           <ReactPaginate
-             className="flex gap-4 items-center"
+            className="flex gap-4 items-center"
             pageCount={pageCount}
             pageRangeDisplayed={5}
             marginPagesDisplayed={2}

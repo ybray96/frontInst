@@ -65,7 +65,7 @@ function TheAchievementCard() {
   } else if (cardId === "8") {
     cardTextMain = ` Қазақстан алғаш рет ЕҚЫҰ-ға төрағалық еткен Азия елі болды және бұл халықаралық қоғамдастықтың үлкен қызығушылығы мен назарын аударды.`;
     cardText2 = (
-      <div className="  text-lg font-nunito">
+      <div className="  text-lg font-montserrat">
         <h1 className="font-semibold">
           Қазақстан алғаш рет ЕҚЫҰ-ға төрағалық еткен Азия елі болды және бұл
           халықаралық қоғамдастықтың үлкен қызығушылығы мен назарын аударды.
@@ -113,7 +113,7 @@ function TheAchievementCard() {
     Қатысушылар: "ЭКСПО 2017" әр түрлі елдерден көптеген қатысушыларды тартты.  `;
   }
   return (
-    <div className=" px-4 flex flex-col mx-auto max-w-screen-xl   font-nunito  ">
+    <div className=" px-4 flex flex-col mx-auto max-w-screen-xl   font-montserrat  ">
       {/* карточки */}
       <div>
         <div className="flex flex-col w-full ">

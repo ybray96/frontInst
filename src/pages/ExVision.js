@@ -65,7 +65,7 @@ function ExVision() {
     }
   };
   return (
-    <div className="w-full absolute bg-[#e4e4e4] font-nunito">
+    <div className="w-full absolute bg-[#e4e4e4] font-montserrat">
       <div
         className="xl:h-[500px] md:h-full h-[150px]  relative"
         style={{
@@ -75,7 +75,7 @@ function ExVision() {
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito">
+        <div className="bg-transparent font-montserrat">
           <div className="p-2">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -123,7 +123,7 @@ function ExVision() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}

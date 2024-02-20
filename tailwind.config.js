@@ -7,6 +7,7 @@ module.exports = {
         jost: ["Jost", "sans"], 
         inter: ['Inter', 'sans'], 
         nunito: ['Nunito', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
       },
     },
   },

@@ -43,7 +43,7 @@ function ResearchCardEn() {
   };
 
   return (
-    <div className="px-4 flex flex-col mx-auto max-w-screen-xl font-nunito">
+    <div className="px-4 flex flex-col mx-auto max-w-screen-xl font-montserrat">
       <div className="w-full">
         <div className="flex flex-col md:w-full">
           {article && (

@@ -108,7 +108,7 @@ function FooterEn() {
                   {isFormSubmitted ? "The form has been sent!" : "Contact us"}
                 </button>
                 <div className="mt-4 ">
-                  {/* <Calendar className="text-lg font-nunito border-none rounded-xl font-bold" /> */}
+                  {/* <Calendar className="text-lg font-montserrat border-none rounded-xl font-bold" /> */}
                 </div>
               </div>
             </form>
@@ -130,9 +130,9 @@ function FooterEn() {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col gap-5 ">
         <div className="flex flex-col gap-5 md:flex-row md:justify-between">
           <div className="flex flex-col gap-5 md:w-1/3">
-            <span className="text-xl font-semibold text-[#333] text-center">
+            {/* <span className="text-xl font-semibold text-[#333] text-center">
               Citizen reception:
-            </span>
+            </span> */}
 
             <button
               className=" mt-3 bg-[#2C4FA4] hover:bg-[#2f457d] rounded-lg text-white align-center text-lg font-semibold py-4 px-5"
@@ -156,7 +156,7 @@ function FooterEn() {
               <img src={arrow2} className="ml-2 w-2.5 h-2.5"></img>
             </button>
           </div> */}
-          <div className="flex flex-col  mt-5 md:mt-0">
+          <div className="flex flex-col  mt-5 md:mt-5">
             <center>
               {" "}
               <span className="font-semibold text-xl text-[#333]">
@@ -182,9 +182,9 @@ function FooterEn() {
           </div> */}
           <div className="flex flex-col md:flex-row md:justify-between">
             <div className="flex flex-col md:w-1/3">
-              <span className="text-xl font-semibold whitespace-nowrap text-center">
+              {/* <span className="text-xl font-semibold whitespace-nowrap text-center">
                 Our SNS:
-              </span>
+              </span> */}
               <div className="flex gap-5 mt-5 mx-auto">
                 <SocialLink
                   href="https://www.facebook.com/people/%D0%9C%D0%B5%D0%BC%D0%BB%D0%B5%D0%BA%D0%B5%D1%82-%D1%82%D0%B0%D1%80%D0%B8%D1%85%D1%8B-%D0%B8%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82%D1%8B-%D0%98%D0%BD%D1%81%D1%82%D0%B8%D1%82%D1%83%D1%82-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0/100064573574874/?hc_location=stream"

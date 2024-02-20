@@ -131,7 +131,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -161,7 +161,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                               >
                                 ENG
                               </li>
-                              <Link to="/history">
+                              <Link to="/newsblock">
                                 <li
                                   onClick={() => handleLanguageChange("KAZ")}
                                   className="cursor-pointer p-3"
@@ -169,7 +169,7 @@ const handleSpecialButtonClick = useVisualImpairmentScript();
                                   ҚАЗ
                                 </li>
                               </Link>
-                              <Link to="/ru/history">
+                              <Link to="/ru/newsblock">
                                 {" "}
                                 <li
                                   onClick={() => handleLanguageChange("RUS")}

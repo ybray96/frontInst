@@ -151,14 +151,14 @@ function NewsCardEn() {
   return (
     <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2  ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">
-        <div className="text-lg font-['Source_Serif_Pro'] text-[#333333]">
+        <div className="text-lg text-[#333333] font-bold">
           Main
         </div>
 
-        <div className="text-lg font-['Source_Serif_Pro'] font-bold text-[#8d8d8d]">
+        <div className="text-lg font-montserrat font-bold text-[#8d8d8d]">
           &#62;
         </div>
-        <div className="text-lg font-['Source_Serif_Pro'] text-[#8d8d8d]">
+        <div className="text-lg font-montserrat text-[#8d8d8d]">
           News Block
         </div>
       </div>
@@ -256,7 +256,7 @@ function NewsCardEn() {
           </div>
         </div>
 
-        <div className="mt-4 max-w-screen-xl mx-auto font-nunito">
+        <div className="mt-4 max-w-screen-xl mx-auto font-montserrat">
           <h1 className="text-[#505050] font-semibold text-lg mt-7 mb-6">
             Recent news
           </h1>

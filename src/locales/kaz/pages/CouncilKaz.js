@@ -121,7 +121,7 @@ function CouncilKaz() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -720,12 +720,12 @@ function CouncilKaz() {
       >
         <HeaderCouncil />
       </div>
-      <div className="max-w-screen-xl mx-auto font-nunito">
+      <div className="max-w-screen-xl mx-auto font-montserrat">
         <div className="mt-2 grid xl:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-2 xl:gap-0">
           <CouncilPerson />
         </div>
         <Link to="/aboutus">
-          <button className="px-2 text-lg font-nunito hover:text-blue-400">
+          <button className="px-2 text-lg font-montserrat hover:text-blue-400">
             Артқа қайту
           </button>
         </Link>

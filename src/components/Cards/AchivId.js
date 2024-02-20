@@ -27,7 +27,7 @@ function AchivId() {
   }, [id]);
 
   return (
-    <div className="px-4 flex flex-col mx-auto max-w-screen-xl font-nunito">
+    <div className="px-4 flex flex-col mx-auto max-w-screen-xl font-montserrat">
       {achievement ? (
         <>
           <h2>{achievement.title}</h2>

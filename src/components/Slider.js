@@ -47,7 +47,7 @@ const SliderKaz = () => {
     setModalOpen(false);
   };
   return (
-    <div className="w-full flex items-center justify-center font-nunito">
+    <div className="w-full flex items-center justify-center font-montserrat">
       <button
         onClick={handlePrevClick}
         className="xl:block absolute left-[200px] bg-white p-2 sm:m-40 md:m-4 m-0 lg:m-40 rounded-full text-gray-800 hover:bg-gray-200 focus:outline-none"

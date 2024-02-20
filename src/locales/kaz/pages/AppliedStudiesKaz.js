@@ -133,7 +133,7 @@ function AppliedStudiesKaz() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -656,7 +656,7 @@ function AppliedStudiesKaz() {
 
         {/* <hr className="w-full h-[1px] bg-gray-500 bg-opacity-40 "></hr> */}
         <div className=" mt-28 sm:mt-48 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-3xl font-semibold   ">
+          <div className="">
             <h1>
               {/* «Тәуелсіз Қазақстанның сыртқы саясаты және өңірлері (1991-2021
               қазақ жж.)» */}

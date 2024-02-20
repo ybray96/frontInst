@@ -53,7 +53,7 @@ function AboutCardEn() {
   };
   const mediaUrl = "http://admin.history-state.kz/media/";
   return (
-    <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-nunito ">
+    <div className="mb-[145px] flex flex-col mx-auto max-w-screen-xl   px-4 font-montserrat ">
       <div className="flex flex-row w-full gap-2 mt-3 items-center w-[235px] h-[25px]">
         {/* ... */}
       </div>

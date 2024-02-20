@@ -65,7 +65,7 @@ function Management() {
           backgroundPosition: "center",
         }}
       >
-        <div className="bg-transparent font-nunito">
+        <div className="bg-transparent font-montserrat">
           <div className="p-2">
             <header>
               <nav className=" flex flex-col mx-auto  max-w-screen-xl">
@@ -103,7 +103,7 @@ function Management() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-base px-8 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -607,7 +607,7 @@ function Management() {
           </div>
         </div>
         <div class=" mt-32 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div class="p-4 text-white text-xl sm:text-3xl  font-semibold   "></div>
+          <div class=""></div>
         </div>
       </div>
 

@@ -56,7 +56,7 @@ function AchivMoreEn() {
     stateSetter((prevState) => !prevState);
   };
   return (
-    <div className="w-full bg-[#e4e4e4]  font-nunito ">
+    <div className="w-full bg-[#e4e4e4]  font-montserrat ">
       <div
         className="relative"
         style={{
@@ -109,7 +109,7 @@ function AchivMoreEn() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
@@ -643,7 +643,7 @@ function AchivMoreEn() {
         </div>
 
         <div className=" mt-28 sm:mt-40 mx-auto max-w-screen-xl   ">
-          <div className="p-4 text-white text-2xl sm:text-3xl font-semibold text-left  "></div>
+          <div className=" text-left  "></div>
         </div>
       </div>
 

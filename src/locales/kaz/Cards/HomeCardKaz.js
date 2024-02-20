@@ -25,7 +25,7 @@ function HomeCardKaz() {
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
         <div className="relative p-3">
-          <h5 className="text-base  font-semibold  text-gray-900 md:h-16 lg:h-20 line-clamp-3">
+          <h5 className="text-base  font-medium text-gray-900 md:h-16 lg:h-24 line-clamp-3">
             {title}
           </h5>
 
@@ -146,7 +146,7 @@ function HomeCardKaz() {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex flex-col mx-auto  max-w-screen-xl     px-4 py-2 font-nunito  ">
+    <div className="flex flex-col mx-auto  max-w-screen-xl     px-4 py-2 font-montserrat  ">
       <div>
         <img
           src={iconbg1}
@@ -171,7 +171,7 @@ function HomeCardKaz() {
           </span>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 md:grid-cols-2 gap-4 mt-20 font-nunito  ">
+        <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 md:grid-cols-2 gap-4 mt-20 font-montserrat  ">
           <Link to="/ourachievements">
             {" "}
             <div className="shadow-lg w-full h-[165px] bg-[#F9F9F9] hover:bg-blue-500 hover:text-white transition duration-100 ease-in-out rounded-md">
@@ -259,7 +259,7 @@ function HomeCardKaz() {
         </div>
 
         {/* РЕСУРСЫ */}
-        <div className="w-full mt-25 font-nunito   ">
+        <div className="w-full mt-25 font-montserrat   ">
           <h1 className="text-[#505050] font-semibold text-lg lg:mt-2 mt-6 mb-4">
             Ресурстар
           </h1>

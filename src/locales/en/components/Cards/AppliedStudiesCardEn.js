@@ -66,7 +66,7 @@ function AppliedStudiesCardEn() {
   const pageCount = Math.ceil(filteredData.length / itemsPerPage);
   const mediaUrl = "http://admin.history-state.kz/media/";
   return (
-    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-nunito">
+    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-montserrat">
       <div className="flex justify-between flex-row  gap-2 mt-3 items-center ">
         <div className="flex gap-2 ">
           <div className="text-lg font-bold   text-[#333333]">Main</div>
@@ -74,7 +74,7 @@ function AppliedStudiesCardEn() {
           <div className="text-lg text-[#8d8d8d]">Researches</div>
         </div>
         <Link to="/en">
-          <p className=" underline  text-lg font-['Source_Serif_Pro'] text-blue-500 ">
+          <p className=" underline  text-lg font-montserrat text-blue-500 ">
             Go back
           </p>
         </Link>

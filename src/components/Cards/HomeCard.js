@@ -22,7 +22,7 @@ function HomeCard() {
         <img className="h-44 w-full rounded-t-xl" src={imageSrc} alt="" />
 
         <div className="relative p-3">
-          <h5 className="text-base  font-semibold tracking-normal text-gray-900 md:h-16 lg:h-20 line-clamp-3 ">
+          <h5 className="text-base  font-medium tracking-normal text-gray-900 md:h-16 lg:h-20 line-clamp-3 ">
             {title}
           </h5>
 

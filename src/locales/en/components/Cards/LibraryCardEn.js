@@ -10,7 +10,7 @@ function LibraryCardEn() {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col bg-white border border-gray-200 shadow-lg hover:scale-95 transition duration-300 ease-in-out font-nunito rounded-lg overflow-hidden w-full"
+      className="flex flex-col bg-white border border-gray-200 shadow-lg hover:scale-95 transition duration-300 ease-in-out font-montserrat rounded-lg overflow-hidden w-full"
     >
       <img
         className="h-36 w-full object-cover rounded-t-lg"
@@ -92,7 +92,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className="flex flex-col mx-auto max-w-screen-xl px-4 py-2 font-nunito whitespace-pre-line">
+    <div className="flex flex-col mx-auto max-w-screen-xl px-4 py-2 font-montserrat whitespace-pre-line">
       <div className="flex flex-row gap-2 mt-3 items-center w-[235px] h-[25px]">
         <div className="text-lg text-[#333333] font-bold">Main</div>
         <div className="text-lg font-bold text-[#8d8d8d]"></div>

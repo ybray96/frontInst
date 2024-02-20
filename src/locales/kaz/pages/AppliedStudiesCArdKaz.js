@@ -67,7 +67,7 @@ function AppliedStudiesCardKaz() {
   const pageCount = Math.ceil(filteredData.length / itemsPerPage);
   const mediaUrl = "http://admin.history-state.kz/media/";
   return (
-    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-nunito">
+    <div className="flex flex-col mx-auto max-w-screen-xl   px-4 py-2 font-montserrat">
       <div className="flex justify-between   gap-2 mt-3 items-center ">
         <div className="flex gap-2 ">
           <div className="text-lg font-bold  text-[#333333]">Басты</div>

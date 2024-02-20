@@ -107,7 +107,7 @@ function NewsBlockKaz() {
                   </Link>
                   <div className="flex items-center gap-4 sm:gap-4">
                     <div className=" lg:block hidden   hover:scale-110"></div>
-                    
+
                     <div className="flex items-center">
                       <SearchFormKK
                         query={query}
@@ -120,7 +120,7 @@ function NewsBlockKaz() {
                         onSubmit={handleSubmit}
                         onSearch={(results) => {}}
                       />
-                        <img
+                      <img
                         src="/pdf/eye.png"
                         alt="Версия сайта для слабовидящих"
                         title="Версия сайта для слабовидящих"
@@ -133,7 +133,7 @@ function NewsBlockKaz() {
                         <button
                           id="dropdownDefaultButton"
                           onClick={toggleDropdown}
-                          className="text-white bg-transparent rounded-lg text-md px-8 py-2.5 text-center inline-flex items-center"
+                          className="text-white bg-transparent rounded-lg text-md md:px-8 px-2 py-2.5 text-center inline-flex items-center"
                           type="button"
                         >
                           {selectedLanguage}
