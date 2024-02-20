@@ -256,8 +256,8 @@ function HomeCardEn() {
                     alt={resource.altText}
                     className="h-[50%] w-full object-cover rounded-t-md"
                   />
-                  <div className="text-center bg-white rounded-b-md py-6  ">
-                    <p className="text-black font-semibold   text-[13.2px] md:text-base lg:text-base xl:text-base  overflow-hidden">
+                  <div className="text-center bg-white rounded-b-md py-6  px-1 ">
+                    <p className="text-black font-medium   text-[13.2px] md:text-base lg:text-base xl:text-base  overflow-hidden">
                       {resource.text}
                     </p>
                   </div>
