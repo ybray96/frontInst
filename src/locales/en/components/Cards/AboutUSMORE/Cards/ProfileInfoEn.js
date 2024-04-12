@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import worker1 from "../../../../../../components/images/Management/245516 copy.png";
 import worker2 from "../../../../../../components/images/Management/image.png";
-import worker3 from "../../../../../../components/images/Management/";
+//import worker3 from "../../../../../../components/images/Management/";
 import worker4 from "../../../../../../components/images/Management/4.png";
 import orcid from "../../../../../../components/imgwork/orcid.png";
 const profiles = [
@@ -18,12 +18,12 @@ const profiles = [
     post: "Deputy Director, D. and. Sc.,",
     link: "https://orcid.org/0000-0001-9498-0000",
   },
-  {
-    name: "",
-    photo: worker3,
-    post: "Deputy Director, Ph.D.",
-    link: "",
-  },
+  // {
+  //   name: "",
+  //   photo: worker3,
+  //   post: "Deputy Director, Ph.D.",
+  //   link: "",
+  // },
   {
     name: "Gabdullina Anara Yenizovna",
     photo: worker4,

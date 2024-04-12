@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import worker1 from "../../../images/Management/245516 copy.png";
 
 import worker2 from "../../../images/Management/image.png";
-import worker3 from "../../../images/Management/";
+//import worker3 from "../../../images/Management/";
 import worker4 from "../../../images/Management/4.png";
 import orcid from "../../../imgwork/orcid.png";
 const profiles = [
@@ -19,12 +19,12 @@ const profiles = [
     post: " Заместитель директора, Д.и.н.,",
     link: "https://orcid.org/0000-0001-9498-0000",
   },
-  {
+  /*{
     name: "",
     photo: worker3,
     post: "Заместитель директора, К. п. н.",
     link: "",
-  },
+  },*/
   {
     name: "Ғабдуллина Анара Жеңізқызы",
     photo: worker4,
