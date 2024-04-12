@@ -47,7 +47,7 @@ function HomeCard() {
       text: "Послания народу Казахстана",
     },
     {
-      href: "https://www.gov.kz/memleket/entities/sci?lang=kk",
+      href: "https://www.gov.kz/memleket/entities/science?lang=ru",
       imgSrc: Rectangle77,
       altText: "Image",
       text: "Уполномоченный орган",

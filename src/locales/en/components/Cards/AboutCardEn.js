@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import yourPDF from "../PDF/Устав.pdf";
+import yourPDF from "../PDF/ЖАРГЫКАЗ-РУС.pdf";
 import DOMPurify from "dompurify";
 import axios from "axios";
 function AboutCardEn() {
@@ -215,13 +215,6 @@ function AboutCardEn() {
                     </h1>
                   </div>
                   <div className=" p-2">
-                    <div className="mt-3 text-[#333] text-lg font-normal">
-                      The goal of the Institute of State History (hereinafter -
-                      the Institute) is scientific-analytical and expert support
-                      for the process of shaping the country's state and
-                      historical identity, systemic and theoretical
-                      justification of modern history of Kazakhstan.
-                    </div>
                     <div className="mt-5 text-[#333] text-lg font-normal">
                       The Institute has a highly professional personnel
                       potential to carry out its mission. The Institute's team

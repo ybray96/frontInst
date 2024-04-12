@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import worker1 from "../../../images/Management/245516 copy.png";
 
 import worker2 from "../../../images/Management/image.png";
-import worker3 from "../../../images/Management/00bc5c49-165f-400a-b65e-55680ee1bd34 copy.png";
+import worker3 from "../../../images/Management/";
 import worker4 from "../../../images/Management/4.png";
 import orcid from "../../../imgwork/orcid.png";
 const profiles = [
@@ -20,10 +20,10 @@ const profiles = [
     link: "https://orcid.org/0000-0001-9498-0000",
   },
   {
-    name: "Қалиев Жабай Нұрмақұлы",
+    name: "",
     photo: worker3,
     post: "Заместитель директора, К. п. н.",
-    link: "https://orcid.org/0000-0002-7469-0396",
+    link: "",
   },
   {
     name: "Ғабдуллина Анара Жеңізқызы",

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, React } from "react";
-import yourPDF from "../PDF/Устав.pdf";
+import yourPDF from "../PDF/ЖАРГЫКАЗ-РУС.pdf";
 import { useEffect } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
@@ -11,7 +11,7 @@ function AboutCard() {
     // Создаем временную ссылку для скачивания PDF
     const link = document.createElement("a");
     link.href = yourPDF;
-    link.download = "Устав.pdf"; // Имя файла, которое будет отображаться при скачивании
+    link.download = "ЖАРГЫКАЗ-РУС.pdf"; // Имя файла, которое будет отображаться при скачивании
 
     // Добавляем ссылку на страницу и автоматически симулируем клик
     document.body.appendChild(link);
@@ -215,13 +215,6 @@ function AboutCard() {
                   </div>
                   <div className=" p-2">
                     {" "}
-                    <div className="mt-3 text-[#333] text-lg font-normal">
-                      Цель Института истории государства (далее - Институт) -
-                      научно-аналитическое и экспертное обеспечение процесса
-                      формирования в стране государственного и исторического
-                      самосознания, системное и теоретическое обоснование
-                      современной истории Казахстана.
-                    </div>
                     <div className="mt-5 text-[#333] text-lg font-normal">
                       Институт располагает высокопрофессиональным кадровым
                       потенциалом для выполнения своего предназначения.

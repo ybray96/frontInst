@@ -46,7 +46,7 @@ function HomeCardEn() {
       text: "Message to the People of KZ",
     },
     {
-      href: "https://www.gov.kz/memleket/entities/sci?lang=kk",
+      href: "https://www.gov.kz/memleket/entities/science?lang=en",
       imgSrc: Rectangle77,
       altText: "Image",
       text: "Authorized body",

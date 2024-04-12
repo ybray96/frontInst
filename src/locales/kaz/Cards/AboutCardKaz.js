@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import yourPDF from "../PDF/Жаргы.pdf";
+import yourPDF from "../PDF/ЖАРГЫКАЗ-РУС.pdf";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
@@ -215,13 +215,6 @@ function AboutCardKaz() {
                   </div>
                   <div className=" p-2">
                     {" "}
-                    <div className="mt-3 text-[#333] text-lg font-normal">
-                      Мемлекет тарихы институтының (бұдан әрі - Институт)
-                      мақсаты - Қазақстанның қазіргі заманғы тарихының жүйелі
-                      және теориялық негіздемесіне сүйене отырып, мемлекеттік
-                      және тарихи сананы қалыптастыру процесін ғылыми-талдамалық
-                      және сараптамалық жағынан қамтамасыз ету.
-                    </div>
                     <div className="mt-5 text-[#333] text-lg font-normal">
                       Институт ұжымы жоғары кәсіби деңгейімен ерекшеленеді,
                       кейбір қызметкерлері ағылшын, түрік тілдерін еркін

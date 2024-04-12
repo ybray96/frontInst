@@ -49,7 +49,7 @@ function HomeCardKaz() {
       text: "Қазақстан халқына жолдау",
     },
     {
-      href: "https://www.gov.kz/memleket/entities/sci?lang=kk",
+      href: "https://www.gov.kz/memleket/entities/science?lang=kk",
       imgSrc: Rectangle77,
       altText: "Image",
       text: "Уәкілетті орган",
