@@ -44,6 +44,7 @@ function HomeCardKaz() {
 
   const resources = [
     {
+      href:"https://akorda.kz/kz/addresses",
       imgSrc: Rectangle75,
       altText: "Image",
       text: "Қазақстан халқына жолдау",

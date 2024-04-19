@@ -41,7 +41,7 @@ function HomeCard() {
 
   const resources = [
     {
-      href: "https://sun9-44.userapi.com/impg/eXfdWf2mII4PBXvpfRd702I7S1r1fB4HIdAn9A/TR5qS9pTwEU.jpg?size=227x128&quality=96&sign=f5051ec18d06053dbc23b1c13aeb7f20&type=album",
+      href: "https://akorda.kz/ru/addresses",
       imgSrc: Rectangle75,
       altText: "Image",
       text: "Послания народу Казахстана",
@@ -53,13 +53,13 @@ function HomeCard() {
       text: "Уполномоченный орган",
     },
     {
-      href: "http://admin.history-state.kz/://quryltai.kz/kk",
+      href: "https://quryltai.kz/ru/",
       imgSrc: Rectangle76,
       altText: "Image",
       text: "Национальный Курултай",
     },
     {
-      href: "https://e-memory.kz/kz/",
+      href: "https://e-memory.kz",
       imgSrc: Rectangle78,
       altText: "Image",
       text: "Государственная комиссия",

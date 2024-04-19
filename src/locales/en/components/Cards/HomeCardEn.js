@@ -41,6 +41,7 @@ function HomeCardEn() {
 
   const resources = [
     {
+      href:"https://akorda.kz/en/addresses",
       imgSrc: Rectangle75,
       altText: "Image",
       text: "Message to the People of KZ",
@@ -58,7 +59,7 @@ function HomeCardEn() {
       text: "National Kurultai",
     },
     {
-      href: "https://e-memory.kz/kz/",
+      href: "https://e-memory.kz/en/",
       imgSrc: Rectangle78,
       altText: "Image",
       text: "State commission",
